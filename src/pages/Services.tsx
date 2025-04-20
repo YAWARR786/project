@@ -107,6 +107,19 @@ const Services: React.FC = () => {
         "Search intent alignment",
         "Optimization checklist"
       ]
+    },
+    {
+      id: 'GEO',
+      icon: <FileEdit className="w-12 h-12 text-blue-500" />,
+      title: "Geo",
+      description: "Generative Engine Optimization (GEO) is about positioning your brand inside AI-generated answers",
+      features: [
+        "Keyword targeting guidance",
+        "Content structure outline",
+        "Competitor content analysis",
+        "Search intent alignment",
+        "Optimization checklist"
+      ]
     }
   ];
 

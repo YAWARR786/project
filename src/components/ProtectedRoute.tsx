@@ -1,7 +1,6 @@
 // src/components/ProtectedRoute.tsx
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { supabase } from '../lib/supabase';
 import { ReactNode } from 'react';
 
 interface ProtectedRouteProps {
@@ -15,10 +14,10 @@ const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
 
   useEffect(() => {
     const checkAuth = async () => {
-      const { data: { user } } = await supabase.auth.getUser();
-      setAuthenticated(!!user);
+     // const { data: { user } } = await supabase.auth.getUser();
+      ///setAuthenticated(!!user);
       setLoading(false);
-      if (!user) navigate('/login');
+      //if (!user) navigate('/login');
     };
     
     checkAuth();

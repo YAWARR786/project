@@ -141,7 +141,7 @@ const Footer = () => {
               <ul className="space-y-4">
                 <li>
                   <a 
-                    href="https://linkedin.com/company" 
+                    href="https://www.linkedin.com/in/yawar-khan-97727a20a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-blue-400 transition flex items-center group"
@@ -169,7 +169,7 @@ const Footer = () => {
                     className="text-gray-400 hover:text-blue-400 transition flex items-center group"
                   >
                     <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition"></span>
-                    YouTube
+                    Instagram
                   </a>
                 </li>
               </ul>

@@ -1,192 +1,91 @@
-import React, { useState, useEffect } from 'react';
+// src/pages/Blog.tsx
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { supabase } from '../lib/supabase';
-import type { BlogPost, PaginationState } from '../types/database';
-import { ArrowLeft, Calendar, Clock, Tag } from 'lucide-react';
-import Pagination from '../components/Pagination';
-import SearchBar from '../components/SearchBar';
+import { getPosts } from '../types/wordpress';
+import BlogSidebar from '../components/BlogSidebar';
+import { BlogPost } from '../types/blog';
 
-const POSTS_PER_PAGE = 9;
-
-const Blog: React.FC = () => {
+const Blog = () => {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [pagination, setPagination] = useState<PaginationState>({
-    page: 1,
-    pageSize: POSTS_PER_PAGE,
-    total: 0,
-  });
 
   useEffect(() => {
-    fetchPosts();
-  }, [pagination.page, selectedCategory, searchQuery]);
-
-  const fetchPosts = async () => {
-    try {
-      setLoading(true);
-      let query = supabase
-        .from('blog_posts')
-        .select('*', { count: 'exact' });
-  
-      // Apply filters
-      if (selectedCategory) {
-        query = query.eq('category', selectedCategory);
-      }
-  
-      if (searchQuery) {
-        query = query.or(`title.ilike.%${searchQuery}%,content.ilike.%${searchQuery}%`);
-      }
-  
-      // Apply pagination
-      const from = (pagination.page - 1) * pagination.pageSize;
-      const to = from + pagination.pageSize - 1;
-  
-      const { data, count, error } = await query
-        .order('created_at', { ascending: false })
-        .range(from, to);
-  
-      if (error) throw error;
-  
-      setPosts(data as BlogPost[] || []);
-      setPagination(prev => ({ ...prev, total: count || 0 }));
-    } catch (error) {
-      console.error('Error fetching posts:', error);
-    } finally {
+    console.log("Loading blog posts...");
+    const fetchPosts = async () => {
+      const data = await getPosts(10);
+      console.log("Loaded posts:", posts);
+      setPosts(data);
       setLoading(false);
-    }
-  };
-
-  const handlePageChange = (page: number) => {
-    setPagination(prev => ({ ...prev, page }));
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const handleSearch = (query: string) => {
-    setSearchQuery(query);
-    setPagination(prev => ({ ...prev, page: 1 }));
-  };
-
-  const categories = Array.from(
-    new Set(
-      posts
-        .map(post => post.category)
-        .filter((category): category is string => Boolean(category))
-    )
-  );
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
+    };
+    fetchPosts();
+  }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-blue-900 text-white py-24">
-        <div className="container mx-auto px-6 max-w-6xl">
-          <Link to="/" className="inline-flex items-center text-blue-300 hover:text-blue-100 mb-8">
-            <ArrowLeft className="mr-2" size={20} />
-            Back to Home
-          </Link>
-          <h1 className="text-5xl font-bold mb-6">SEO & Digital Marketing Blog</h1>
-          <p className="text-xl text-blue-100 max-w-2xl">
-            Expert insights, actionable strategies, and the latest trends in SEO, content marketing, and digital growth.
-          </p>
-        </div>
-      </div>
-
-      <div className="container mx-auto px-6 max-w-6xl py-12">
-        {/* Search Bar */}
-        <SearchBar onSearch={handleSearch} />
-
-        {/* Category Filter */}
-        <div className="flex flex-wrap gap-4 mb-12">
-          <button
-            onClick={() => setSelectedCategory(null)}
-            className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
-              !selectedCategory
-                ? 'bg-blue-600 text-white'
-                : 'bg-white text-gray-600 hover:bg-gray-100'
-            }`}
-          >
-            All Posts
-          </button>
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
-                selectedCategory === category
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-white text-gray-600 hover:bg-gray-100'
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-
-        {/* Blog Posts Grid */}
-        {loading ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((n) => (
-              <div key={n} className="bg-white rounded-xl p-6 loading-shimmer h-96"></div>
-            ))}
-          </div>
-        ) : (
-          <>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {posts.map((post) => (
-                <Link
-                  to={`/blog/${post.slug}`}
-                  key={post.id}
-                  className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition group animate-fade-in hover-lift"
-                >
-                  <div className="relative h-48 overflow-hidden">
-                    <img
-                      src={post.image_url || 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800'}
-                      alt={post.title}
-                      className="w-full h-full object-cover transition-transform group-hover:scale-105"
-                    />
-                    {post.category && (
-                      <div className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                        {post.category}
-                      </div>
-                    )}
-                  </div>
-                  <div className="p-6">
-                    <h2 className="text-xl font-bold mb-4 group-hover:text-blue-600 transition">
-                      {post.title}
-                    </h2>
-                    <p className="text-gray-600 mb-4 line-clamp-2">
-                      {post.excerpt}
-                    </p>
-                    <div className="flex items-center text-sm text-gray-500 gap-4">
-                      <div className="flex items-center">
-                        <Calendar size={16} className="mr-1" />
-                        {formatDate(post.created_at)}
-                      </div>
-                      <div className="flex items-center">
-                        <Clock size={16} className="mr-1" />
-                        {post.read_time} min read
-                      </div>
+    <div className="min-h-screen bg-gray-50 py-12">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col lg:flex-row gap-8">
+          {/* Main Content */}
+          <div className="lg:w-2/3">
+            <h1 className="text-4xl font-bold mb-8">Blog Posts</h1>
+            
+            {loading ? (
+              <div className="space-y-8">
+                {[...Array(3)].map((_, i) => (
+                  <div key={i} className="h-64 bg-gray-100 rounded-lg animate-pulse"></div>
+                ))}
+              </div>
+            ) : (
+              <div className="space-y-8">
+                {posts.map(post => (
+                  <article key={post.id} className="bg-white p-6 rounded-lg shadow-sm">
+                    <Link to={`/blog/${post.slug}`}>
+                      <h2 className="text-2xl font-bold mb-2 hover:text-blue-600 transition-colors">
+                        {post.title.rendered}
+                      </h2>
+                    </Link>
+                    
+                    <div className="flex items-center gap-4 text-gray-600 mb-4">
+                      <span>{new Date(post.date).toLocaleDateString()}</span>
+                      <span>•</span>
+                      <span>{post.read_time} min read</span>
+                      {post.category && (
+                        <>
+                          <span>•</span>
+                          <span className="text-blue-600">{post.category}</span>
+                        </>
+                      )}
                     </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
 
-            {/* Pagination */}
-            <Pagination
-              pagination={pagination}
-              onPageChange={handlePageChange}
-            />
-          </>
-        )}
+                    {post.image_url && (
+                      <img 
+                        src={post.image_url}
+                        alt={post.title.rendered}
+                        className="w-full h-64 object-cover mb-4 rounded-lg"
+                      />
+                    )}
+
+                    <div 
+                      className="prose mb-4"
+                      dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }} 
+                    />
+
+                    <Link 
+                      to={`/blog/${post.slug}`}
+                      className="inline-flex items-center text-blue-600 font-medium"
+                    >
+                      Read more →
+                    </Link>
+                  </article>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Sidebar */}
+          <div className="lg:w-1/3">
+            <BlogSidebar />
+          </div>
+        </div>
       </div>
     </div>
   );

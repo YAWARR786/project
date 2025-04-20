@@ -2,17 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route, Link ,BrowserRouter,useLocation } from 'react-router-dom';
 import { ArrowRight, BarChart, BookOpen, LineChart as ChartLineUp, Download, FileCheck, Globe, Layout, LineChart, MessageSquare, Search, Settings, Target, Zap, Menu, X } from 'lucide-react';
 import ScrollToTop from './components/ScrollToTop';
-import Blog from './pages/Blog';
-import { supabase } from './lib/supabase';
 import Footer from './components/Footer';
 import EnhancedServicesSection from './components/EnhancedServicesSection';
 import Services from './pages/Services';
 import About from './pages/About';
 import Process from './pages/Process';
-import ProtectedRoute from './components/ProtectedRoute';
 import Contact from './pages/Contact';
-import BlogManager from './pages/admin/BlogManager';
-import BlogEditor from './pages/admin/BlogEditor';
 import TechnicalSeoAudit from './pages/TechnicalSeoAudit';
 import ContentStrategy from './pages/ContentStrategy';
 import InternationalSeo from './pages/InternationalSEO';
@@ -23,8 +18,8 @@ import SEOContentBriefs from './pages/SEOContentBriefs';
 import KeywordStrategy from './pages/KeywordStrategy';
 import TestimonialSlider from './components/TestimonialSlider';
 import { BlogPost } from './types/blog';
-import Login from './pages/Login';
 import BlogPostComponent from './pages/BlogPost';
+import GEO from './pages/GEO';
 
 
 
@@ -32,21 +27,56 @@ import BlogPostComponent from './pages/BlogPost';
 const BlogSection = () => {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchLatestPosts = async () => {
       try {
-        const { data, error } = await supabase
-          .from('blog_posts')
-          .select('*')
-          //.eq('published', true) // Remove or keep after adding column
-          .order('created_at', { ascending: false })
-          .limit(3);
+        setLoading(true);
+        setError(null);
         
-        if (error) throw error;
-        setPosts(data as BlogPost[] || []);
+        const response = await fetch(
+          'https://springgreen-porcupine-350347.hostingersite.com/wp-json/wp/v2/posts?_embed&per_page=3'
+        );
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        
+        // Transform WordPress data to match BlogPost type
+        const formattedPosts = data.map((post: any) => {
+          const featuredMedia = post._embedded?.['wp:featuredmedia']?.[0];
+          const terms = post._embedded?.['wp:term']?.flat() || [];
+          const categories = terms.filter((t: any) => t.taxonomy === 'category');
+          const tags = terms.filter((t: any) => t.taxonomy === 'post_tag');
+          
+          return {
+            id: post.id,
+            date: post.date,
+            slug: post.slug,
+            title: {
+              rendered: post.title.rendered
+            },
+            content: {
+              rendered: post.content.rendered
+            },
+            excerpt: {
+              rendered: post.excerpt.rendered.replace(/<[^>]+>/g, '') // Remove HTML tags
+            },
+            image_url: featuredMedia?.source_url || '/default-blog-image.jpg',
+            category: categories[0]?.name || 'Uncategorized',
+            read_time: Math.ceil(post.content.rendered.split(' ').length / 200) || 5,
+            yoast_head_json: post.yoast_head_json,
+            _embedded: post._embedded
+          } as BlogPost;
+        });
+        
+        setPosts(formattedPosts);
       } catch (error) {
-        console.error('Error fetching latest posts:', error);
+        console.error('Error fetching WordPress posts:', error);
+        setError('Failed to load blog posts. Please try again later.');
       } finally {
         setLoading(false);
       }
@@ -78,6 +108,30 @@ const BlogSection = () => {
     );
   }
 
+  if (error) {
+    return (
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6 max-w-6xl text-center">
+          <div className="max-w-4xl mb-16">
+            <span className="text-blue-600 font-semibold mb-6 block">INSIGHTS & STRATEGIES</span>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Latest SEO Insights and Action Plans
+            </h2>
+            <p className="text-xl text-gray-600 mb-6">
+              {error}
+            </p>
+            <button 
+              onClick={() => window.location.reload()}
+              className="bg-blue-500 text-white px-6 py-3 rounded-lg"
+            >
+              Retry
+            </button>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="py-24 bg-white">
       <div className="container mx-auto px-6 max-w-6xl">
@@ -102,10 +156,11 @@ const BlogSection = () => {
                 >
                   <Link to={`/blog/${post.slug}`} className="block h-full">
                     <div className="relative overflow-hidden rounded-xl mb-6 h-64">
-                    <img 
-                          src={post.image_url || '/default-blog-image.jpg'} 
-                          alt={post.title}
-                        />
+                      <img 
+                        src={post.image_url || '/default-blog-image.jpg'} 
+                        alt={post.title.rendered}
+                        className="w-full h-full object-cover"
+                      />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
                     <div className="flex items-center gap-4 mb-4">
@@ -114,9 +169,11 @@ const BlogSection = () => {
                       <span className="text-gray-600">{post.read_time} min read</span>
                     </div>
                     <h3 className="text-2xl font-bold mb-4 group-hover:text-blue-600 transition-colors duration-200">
-                      {post.title}
+                      {post.title.rendered}
                     </h3>
-                    <p className="text-gray-600 mb-6">{post.excerpt}</p>
+                    <p className="text-gray-600 mb-6 line-clamp-2">
+                      {post.excerpt.rendered}
+                    </p>
                     <div className="flex items-center text-blue-600 font-medium group-hover:gap-4 transition-all duration-200">
                       Read Article <ArrowRight className="ml-2" />
                     </div>
@@ -124,14 +181,7 @@ const BlogSection = () => {
                 </div>
               ))}
             </div>
-            <div className="text-center mt-16">
-              <Link 
-                to="/blog"
-                className="bg-gray-900 text-white px-8 py-4 rounded-lg font-medium hover:bg-gray-800 transition flex items-center gap-2 mx-auto text-lg inline-flex"
-              >
-                View All Articles <BookOpen size={20} />
-              </Link>
-            </div>
+           
           </>
         ) : (
           <div className="text-center py-12">
@@ -315,14 +365,14 @@ const HomePage: React.FC = () => {
                   {/* Brand logos with hover effects - 8 logos */}
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 relative z-10">
                     {[
-                      { name: 'Travel Triangle', logo: 'src/assets/1.jpg' },
-                      { name: 'Pepper Content', logo: 'src/assets/2.png' },
-                      { name: 'Qyubic', logo: 'src/assets/3.jpg' },
-                      { name: 'Security Base Group', logo: 'src/assets/4.png' },
-                      { name: 'Brand 5', logo: 'src/assets/5.jpg' },
-                      { name: 'Brand 6', logo: 'src/assets/6.png' },
-                      { name: 'Brand 7', logo: 'src/assets/7.jpg' },
-                      { name: 'Brand 8', logo: 'src/assets/10.jpg' }
+                      { name: 'Travel Triangle', logo: '/images/1.jpg' },
+                      { name: 'Pepper Content', logo: '/images/2.png' },
+                      { name: 'Qyubic', logo: '/images/3.jpg' },
+                      { name: 'Security Base Group', logo: '/images/4.png' },
+                      { name: 'Brand 5', logo: '/images/5.jpg' },
+                      { name: 'Brand 6', logo: '/images/6.png' },
+                      { name: 'Brand 7', logo: '/images/7.jpg' },
+                      { name: 'Brand 8', logo: '/images/10.jpg' }
                     ].map((brand, index) => (
                       <div 
                         key={index} 
@@ -541,7 +591,7 @@ const AppLayout = () => {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/blog" element={<Blog />} />
+         {/* <Route path="/blog" element={<Blog />} /> */}
           <Route path="/blog/:slug" element={<BlogPostComponent  />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/technical-seo-audit" element={<TechnicalSeoAudit />} />
@@ -552,6 +602,7 @@ const AppLayout = () => {
           <Route path="/services/Custom-AI-Agent-Creation" element={<ContentStrategy />} />
           <Route path="/services/international-seo" element={<InternationalSeo />} />
           <Route path="/services/seo-content-briefs" element={<SEOContentBriefs />} />
+          <Route path="/services/GEO" element={<GEO />} />
           <Route path="/about" element={<About />} />
           <Route path="/process" element={<Process />} />
           <Route path="/contact" element={<Contact />} />
@@ -571,9 +622,8 @@ const App: React.FC = () => {
       <Route path="/*" element={<AppLayout />} />
 
       {/* Admin routes */}
-      <Route path="/admin/blog" element={<BlogManager />} />
-      <Route path="/admin/blog/new" element={<BlogEditor />} />
-      <Route path="/admin/blog/edit/:slug" element={<BlogEditor />} />
+      {/* <Route path="/admin/blog/new" element={<BlogEditor />} />
+      <Route path="/admin/blog/edit/:slug" element={<BlogEditor />} /> */}o
     </Routes>
   );
 };
