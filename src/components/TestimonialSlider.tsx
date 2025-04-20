@@ -17,7 +17,7 @@ const testimonials: Testimonial[] = [
     position: "Project Collaborator",
     company: "Wordstormer",
     comment: "I’ve worked with a lot of writers, but Yawar stood out. He never once missed a timeline, and somehow, every conversation with him left me feeling clearer about the project. He’s one of those rare people who actually pay attention-not just to words, but to what’s between the lines too",
-    image: "src/assets/Ujjwal.jpg"
+    image: "https://i.ibb.co/1twmG3yQ/Ujjwal.jpg"
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const testimonials: Testimonial[] = [
     position: "Co-Founder",
     company: "Thrive Togethe",
     comment: "Yawar was a huge support when I needed to create structured, high-quality course content for three of my clients - he just got what I wanted. He also worked on GEO for my website, and honestly, the bounce rate dropped way more than I expected. Super reliable and easy to brainstorm with.",
-    image: "src/assets/Shohini-Maam.jpg"
+    image: "https://i.ibb.co/W4nTHXs7/Shohini-Maam.jpg"
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const testimonials: Testimonial[] = [
     position: " Sr. SEO Executive ",
     company: "iToolab AnyGo",
     comment: "Our partnership with Yawar started with just a few blogs, but he quickly became someone we could trust with PR, deep-dive research, and more. His work barely needs revisions he- just gets it. Super professional, always meets deadlines, and never once said ‘no’ to a task, no matter how last-minute.",
-    image: "src/assets/Megan-Wu.jpeg"
+    image: "https://i.ibb.co/cKKb8x8H/Megan-Wu.jpg"
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ const testimonials: Testimonial[] = [
     position: "Digital Marketer",
     company: "Digital Kranti",
     comment: "I approached Yawar on LinkedIn when I needed someone who could write and translate content without complicating things. He helped us turn our blogs into natural-sounding Hinglish and wrote a few SEO pieces that actually ranked on page 1. His content planning for our ed-tech projects really brought clarity.",
-    image: "src/assets/Mukul.jpeg"
+    image: "https://i.ibb.co/21BVWSb8/Mukul.jpg"
   }
 ];
 

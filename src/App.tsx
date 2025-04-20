@@ -365,13 +365,13 @@ const HomePage: React.FC = () => {
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 relative z-10">
                     {[
                       { name: 'Travel Triangle', logo: 'https://i.ibb.co/yJWHpXP/1.jpg' },
-                      { name: 'Pepper Content', logo: 'src/assets/2.png' },
-                      { name: 'Qyubic', logo: 'src/assets/3.jpg' },
-                      { name: 'Security Base Group', logo: 'src/assets/4.png' },
-                      { name: 'Brand 5', logo: 'src/assets/5.jpg' },
-                      { name: 'Brand 6', logo: 'src/assets/6.png' },
-                      { name: 'Brand 7', logo: 'src/assets/7.jpg' },
-                      { name: 'Brand 8', logo: 'src/assets/10.jpg' }
+                      { name: 'Pepper Content', logo: 'https://i.ibb.co/kgzgfB4W/2.png' },
+                      { name: 'Qyubic', logo: 'https://i.ibb.co/QLHYCt6/3.jpg' },
+                      { name: 'Security Base Group', logo: 'https://i.ibb.co/MDsKBJ6s/4.png' },
+                      { name: 'Brand 5', logo: 'https://i.ibb.co/TDCFN9hh/5.jpg' },
+                      { name: 'Brand 6', logo: 'https://i.ibb.co/Kc1vL4bC/6.png' },
+                      { name: 'Brand 7', logo: 'https://i.ibb.co/4ZBpGk20/7.jpg' },
+                      { name: 'Brand 8', logo: 'https://i.ibb.co/4ZkPtWKL/10.jpg' }
                     ].map((brand, index) => (
                       <div 
                         key={index} 
