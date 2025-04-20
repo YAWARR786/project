@@ -361,18 +361,17 @@ const HomePage: React.FC = () => {
                   <div className="absolute inset-0 overflow-hidden opacity-10">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500 to-transparent animate-pulse-slow"></div>
                   </div>
-                  
                   {/* Brand logos with hover effects - 8 logos */}
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 relative z-10">
                     {[
-                      { name: 'Travel Triangle', logo: '/images/1.jpg' },
-                      { name: 'Pepper Content', logo: '/images/2.png' },
-                      { name: 'Qyubic', logo: '/images/3.jpg' },
-                      { name: 'Security Base Group', logo: '/images/4.png' },
-                      { name: 'Brand 5', logo: '/images/5.jpg' },
-                      { name: 'Brand 6', logo: '/images/6.png' },
-                      { name: 'Brand 7', logo: '/images/7.jpg' },
-                      { name: 'Brand 8', logo: '/images/10.jpg' }
+                      { name: 'Travel Triangle', logo: 'https://i.ibb.co/yJWHpXP/1.jpg' },
+                      { name: 'Pepper Content', logo: 'src/assets/2.png' },
+                      { name: 'Qyubic', logo: 'src/assets/3.jpg' },
+                      { name: 'Security Base Group', logo: 'src/assets/4.png' },
+                      { name: 'Brand 5', logo: 'src/assets/5.jpg' },
+                      { name: 'Brand 6', logo: 'src/assets/6.png' },
+                      { name: 'Brand 7', logo: 'src/assets/7.jpg' },
+                      { name: 'Brand 8', logo: 'src/assets/10.jpg' }
                     ].map((brand, index) => (
                       <div 
                         key={index} 
