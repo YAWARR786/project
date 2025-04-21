@@ -7,40 +7,143 @@ const TechnicalSeoAudit = () => {
     name: '',
     email: '',
     website: '',
-    concern: ''
+    queries: ''
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-  };
+     
+      const [formErrors, setFormErrors] = useState({
+           name: '',
+           email: '',
+           message: ''
+         });
+       
+         const [isSubmitting, setIsSubmitting] = useState(false);
+         const [submitStatus, setSubmitStatus] = useState<{
+           success: boolean;
+           message: string;
+         } | null>(null);
+       
+         const validateForm = () => {
+           let valid = true;
+           const newErrors = {
+             name: '',
+             email: '',
+             message: ''
+           };
+       
+           if (!formData.name.trim()) {
+             newErrors.name = 'Name is required';
+             valid = false;
+           }
+       
+           if (!formData.email.trim()) {
+             newErrors.email = 'Email is required';
+             valid = false;
+           } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+             newErrors.email = 'Please enter a valid email';
+             valid = false;
+           }
+       
+           if (!formData.queries.trim()) {
+             newErrors.message = 'Message is required';
+             valid = false;
+           }
+       
+           setFormErrors(newErrors);
+           return valid;
+         };
+       
+         const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+           setFormData({
+             ...formData,
+             [e.target.name]: e.target.value
+           });
+         };
+         
+           const handleSubmit = async (e: React.FormEvent) => {
+               e.preventDefault();
+               
+               if (!validateForm()) return;
+               
+               setIsSubmitting(true);
+               setSubmitStatus(null);
+           
+             try {
+               const scriptUrl = 'https://script.google.com/macros/s/AKfycbwlzBiQ-6Ss1qccQCLZtVobaILd-PHKAJ2XtUE0_R0iHuzbVcFYHPtfiRPCMpx-Ig0-/exec';
+               
+               // Important: Add a random parameter to prevent caching
+               const cacheBusterUrl = `${scriptUrl}?t=${Date.now()}`;
+               
+               const response = await fetch(cacheBusterUrl, {
+                 method: 'POST',
+                 mode: 'no-cors',
+                 headers: {
+                   'Content-Type': 'application/json',
+                 },
+                 body: JSON.stringify({
+                   ...formData,
+                   formType: 'service-geo'
+                 }),
+               });
+           
+               // With no-cors mode, we can't read the response directly
+               // So we'll assume success if we get any response
+               setSubmitStatus({
+                 success: true,
+                 message: 'Thank you for your interest in GEO services! We will contact you soon.'
+               });
+               
+               // Reset form
+               setFormData({
+                 name: '',
+                 email: '',
+                 website: '',
+                 queries: ''
+               });
+           
+             } catch (error) {
+               console.error('Error submitting form:', error);
+               setSubmitStatus({
+                 success: false,
+                 message: 'There was an error submitting your form. Please try again later.'
+               });
+             } finally {
+               setIsSubmitting(false);
+             }
+           
+            };
+  
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <div className="bg-gradient-to-br from-blue-900 to-black pt-32 pb-24">
-        <div className="container mx-auto px-6 max-w-6xl">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-8">
-              Your Traffic Problem Might Be a Technical One
-            </h1>
-            <p className="text-xl text-blue-100 mb-12">
-              Before we talk keywords, let's fix what's broken under the hood. A full technical SEO audit reveals what's silently killing your rankings — and gives you a clear roadmap to fix it.
-            </p>
-            <button className="bg-blue-500 text-white px-8 py-4 rounded-lg font-medium hover:bg-blue-600 transition flex items-center gap-2 mx-auto text-lg">
-              Request My SEO Audit <ArrowRight size={20} />
-            </button>
-          </div>
+    {/* Back to Home */}
+    <div className="absolute top-6 right-6 z-10">
+      <a
+        href="/"
+        className="text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg font-medium transition"
+      >
+        ← Back to Home
+      </a>
+    </div>
+  
+    {/* Hero Section */}
+    <div className="bg-gradient-to-br from-blue-900 to-black pt-32 pb-24 relative">
+      <div className="container mx-auto px-6 max-w-6xl">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-8">
+            Your Traffic Problem Might Be a Technical One
+          </h1>
+          <p className="text-xl text-blue-100 mb-12">
+            Before we talk keywords, let's fix what's broken under the hood. A full technical SEO audit reveals what's silently killing your rankings — and gives you a clear roadmap to fix it.
+          </p>
+          <button className="bg-blue-500 text-white px-8 py-4 rounded-lg font-medium hover:bg-blue-600 transition flex items-center gap-2 mx-auto text-lg">
+            Request My SEO Audit <ArrowRight size={20} />
+          </button>
         </div>
       </div>
+    </div>
+
+  
 
       {/* Section 1: What Is a Technical SEO Audit? */}
       <section className="py-24 bg-gray-50">
@@ -261,7 +364,7 @@ const TechnicalSeoAudit = () => {
                 <textarea
                   id="concern"
                   name="concern"
-                  value={formData.concern}
+                  value={formData.queries}
                   onChange={handleChange}
                   rows={4}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"

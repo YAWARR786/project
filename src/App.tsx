@@ -20,9 +20,10 @@ import TestimonialSlider from './components/TestimonialSlider';
 import { BlogPost } from './types/blog';
 import BlogPostComponent from './pages/BlogPost';
 import GEO from './pages/GEO';
-
-
-
+import CustomAIAgent from './pages/CustomAIAgent';
+import BlogPage from './pages/BlogPage';
+import PrivacyPolicy from './pages/PrivacyPolicy ';
+import TermsOfService from './pages/TermsAndService';
 
 const BlogSection = () => {
   const [posts, setPosts] = useState<BlogPost[]>([]);
@@ -225,7 +226,11 @@ const HomePage: React.FC = () => {
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="flex items-center justify-between h-20">
             <Link to="/" className="text-2xl font-bold text-blue-900">
-              SEO Expert
+            <img 
+            src="https://i.ibb.co/67XCdBdd/logo.png" 
+            alt="SEO Expert Logo" 
+            className="h-20 w-auto" 
+          />
             </Link>
 
             {/* Mobile Menu Button */}
@@ -306,7 +311,7 @@ const HomePage: React.FC = () => {
         <div className="container mx-auto px-6 max-w-6xl relative">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7">
-              <span className="text-blue-400 font-semibold mb-6 block">SEO STRATEGIST & CONSULTANT</span>
+              <span className="text-blue-400 font-semibold mb-6 block">RANK N CONVERT</span>
               <h1 className="text-6xl font-bold text-white mb-8 leading-tight italic">
                 <span className="text-white">3+ Years. 30+ Niches. $800k In Revenue From SEO Alone.</span>
               </h1>
@@ -364,14 +369,14 @@ const HomePage: React.FC = () => {
                   {/* Brand logos with hover effects - 8 logos */}
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 relative z-10">
                     {[
-                      { name: 'Travel Triangle', logo: 'https://i.ibb.co/yJWHpXP/1.jpg' },
-                      { name: 'Pepper Content', logo: 'https://i.ibb.co/kgzgfB4W/2.png' },
-                      { name: 'Qyubic', logo: 'https://i.ibb.co/QLHYCt6/3.jpg' },
-                      { name: 'Security Base Group', logo: 'https://i.ibb.co/MDsKBJ6s/4.png' },
-                      { name: 'Brand 5', logo: 'https://i.ibb.co/TDCFN9hh/5.jpg' },
-                      { name: 'Brand 6', logo: 'https://i.ibb.co/Kc1vL4bC/6.png' },
-                      { name: 'Brand 7', logo: 'https://i.ibb.co/4ZBpGk20/7.jpg' },
-                      { name: 'Brand 8', logo: 'https://i.ibb.co/4ZkPtWKL/10.jpg' }
+                      { name: 'iToolab AnyGo', logo: 'https://i.ibb.co/yJWHpXP/1.jpg' },
+                      { name: 'Fones GO', logo: 'https://i.ibb.co/kgzgfB4W/2.png' },
+                      { name: 'Moc Pogo', logo: 'https://i.ibb.co/QLHYCt6/3.jpg' },
+                      { name: 'Travel Triangle', logo: 'https://i.ibb.co/MDsKBJ6s/4.png' },
+                      { name: 'Security Base Group', logo: 'https://i.ibb.co/TDCFN9hh/5.jpg' },
+                      { name: 'Qyubic', logo: 'https://i.ibb.co/Kc1vL4bC/6.png' },
+                      { name: 'Thrive Together', logo: 'https://i.ibb.co/4ZBpGk20/7.jpg' },
+                      { name: 'Pepper Content', logo: 'https://i.ibb.co/4ZkPtWKL/10.jpg' }
                     ].map((brand, index) => (
                       <div 
                         key={index} 
@@ -590,15 +595,18 @@ const AppLayout = () => {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<HomePage />} />
-         {/* <Route path="/blog" element={<Blog />} /> */}
+         <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<BlogPostComponent  />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsOfService />} />
           <Route path="/services/technical-seo-audit" element={<TechnicalSeoAudit />} />
+          <Route path="/services/content-strategy" element={<ContentStrategy />} />
           <Route path="/services/keyword-strategy" element={<KeywordStrategy />} />
           <Route path="/services/seo-analytics" element={<SeoAnalytics />} />
           <Route path="/services/seo-blogs" element={<SeoBlogs />} />
           <Route path="/services/local-seo" element={<LocalSeo />} />
-          <Route path="/services/Custom-AI-Agent-Creation" element={<ContentStrategy />} />
+          <Route path="/services/Custom-AI-Agent-Creation" element={<CustomAIAgent />} />
           <Route path="/services/international-seo" element={<InternationalSeo />} />
           <Route path="/services/seo-content-briefs" element={<SEOContentBriefs />} />
           <Route path="/services/GEO" element={<GEO />} />

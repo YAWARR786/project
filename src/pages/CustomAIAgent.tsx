@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
-import { FileText, ArrowRight, Users, Target, Layout, Calendar, BookOpen, FileCheck } from 'lucide-react';
+import { Bot, ArrowRight, Target, FileText, Settings, Users, Zap, Brain } from 'lucide-react';
 
-const ContentStrategy = () => {
+const CustomAIAgent = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     website: '',
     queries: ''
   });
+
 const [formErrors, setFormErrors] = useState({
     name: '',
     email: '',
@@ -110,31 +110,9 @@ const [formErrors, setFormErrors] = useState({
         setIsSubmitting(false);
       }
     };
-  
+
   return (
     <div className="min-h-screen bg-white">
-      <Helmet>
-        <title>Content Strategy Services | Transform Your Content Marketing</title>
-        <meta 
-          name="description" 
-          content="Professional content strategy services to align your content with business goals. Get a research-driven system that ranks, educates, and converts." 
-        />
-        <meta
-          name="keywords"
-          content="content strategy, SEO content, content marketing, content planning, content audit"
-        />
-        <meta property="og:title" content="Content Strategy Services | Transform Your Content Marketing" />
-        <meta property="og:description" content="Professional content strategy services to align your content with business goals." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourwebsite.com/content-strategy" />
-        <meta property="og:image" content="https://yourwebsite.com/images/content-strategy-og-image.jpg" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Content Strategy Services | Transform Your Content Marketing" />
-        <meta name="twitter:description" content="Professional content strategy services to align your content with business goals." />
-        <meta name="twitter:image" content="https://yourwebsite.com/images/content-strategy-og-image.jpg" />
-        <link rel="canonical" href="https://yourwebsite.com/content-strategy" />
-      </Helmet>
-      
        {/* Back to Home */}
     <div className="absolute top-6 right-6 z-10">
       <a
@@ -149,113 +127,113 @@ const [formErrors, setFormErrors] = useState({
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-8">
-              Content Without Strategy Is Just Noise
+              Build an AI That Understands Your Business — Not Just Your Prompts
             </h1>
             <p className="text-xl text-blue-100 mb-12">
-              Your competitors are publishing more than ever — but most of it doesn't move the needle. I design content strategies that don't just get clicks — they bring clarity, capture demand, and connect your SEO goals to business growth.
+              Most AI tools feel impressive at first — until you realize they don't understand your brand, your tone, or your goals. I create custom-trained AI agents designed to think and respond like someone who knows your business inside out.
             </p>
             <button className="bg-blue-500 text-white px-8 py-4 rounded-lg font-medium hover:bg-blue-600 transition flex items-center gap-2 mx-auto text-lg">
-              Request Content Strategy Session <ArrowRight size={20} />
+              Request AI Agent Strategy Session <ArrowRight size={20} />
             </button>
           </div>
         </div>
       </div>
 
-      {/* Section 1: What Is a Content Strategy? */}
+      {/* What Is Custom AI Agent Section */}
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="max-w-4xl">
             <h2 className="text-4xl font-bold text-gray-900 mb-8">
-              A System That Transforms Ideas Into Impact
+              Not a Chatbot. Not a Plugin. A Strategic Teammate.
             </h2>
-            <p className="text-xl text-gray-600 mb-12">
-              A content strategy is more than deciding what to post next. It's a research-driven, persona-aligned system that defines what to say, who to say it to, and when to say it.
+            <p className="text-xl text-gray-600 mb-6">
+              A custom AI agent is a task-specific, brand-trained assistant designed to support your team where it matters most — writing content, generating SEO briefs, answering client questions, summarizing documents, or streamlining internal workflows.
             </p>
             <p className="text-xl text-gray-600 font-semibold">
-              It connects your brand's positioning to search intent, channel behavior, and user psychology — so that every piece of content serves a measurable purpose.
+              It doesn't rely on templates or guesswork. It's built on your own tone, materials, and systems — and designed to get smarter over time.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Section 2: Why Most SEO Content Fails */}
+      {/* Why You Need More Section */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-4xl font-bold text-gray-900 mb-8">
-            More Isn't Better — Alignment Is
+            Prebuilt AI Feels Smart — Until It Starts Saying Things You'd Never Approve
           </h2>
           <p className="text-xl text-gray-600 mb-12">
-            Content underperforms when it lacks strategy. If you're publishing blogs, landing pages, or product content without a clear structure, you're likely:
+            Off-the-shelf AI tools aren't built for your business. They don't know your voice. They can't access your internal processes. They treat your SEO agency the same way they'd treat an online clothing store.
           </p>
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-gray-50 p-8 rounded-xl">
               <ul className="space-y-6">
                 <li className="flex items-start gap-4">
-                  <FileText className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
-                  <p className="text-lg text-gray-700">Targeting broad terms instead of buyer-specific ones</p>
+                  <Bot className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
+                  <p className="text-lg text-gray-700">Inconsistent or off-brand output</p>
                 </li>
                 <li className="flex items-start gap-4">
-                  <FileText className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
-                  <p className="text-lg text-gray-700">Creating redundant or cannibalizing content</p>
+                  <Bot className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
+                  <p className="text-lg text-gray-700">Rewrites and back-and-forth with your team</p>
                 </li>
               </ul>
             </div>
             <div className="bg-gray-50 p-8 rounded-xl">
               <ul className="space-y-6">
                 <li className="flex items-start gap-4">
-                  <FileText className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
-                  <p className="text-lg text-gray-700">Publishing reactively instead of following a roadmap</p>
+                  <Bot className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
+                  <p className="text-lg text-gray-700">Missed opportunities to automate repeatable work</p>
                 </li>
                 <li className="flex items-start gap-4">
-                  <FileText className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
-                  <p className="text-lg text-gray-700">Speaking to everyone — and converting no one</p>
+                  <Bot className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
+                  <p className="text-lg text-gray-700">A constant feeling of "almost, but not quite right"</p>
                 </li>
               </ul>
             </div>
           </div>
           <p className="text-2xl font-bold text-blue-900 text-center italic">
-            The solution isn't more words. It's a smarter system.
+            A custom agent flips that. It speaks like you, writes for you, and works with you.
           </p>
         </div>
       </section>
 
-      {/* Section 3: Content Strategy Process */}
+      {/* Process Section */}
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
-            A Strategy That Starts With People — Not Just Keywords
+            Built Around Your Workflows — Not Just Your Prompts
           </h2>
           <div className="space-y-8">
             {[
               {
-                icon: <Users className="w-8 h-8 text-blue-500" />,
-                title: "User Persona Development",
-                description: "Every strategy begins by defining who you're speaking to. I create audience personas based on behavior, needs, objections, and search language — not demographics."
-              },
-              {
                 icon: <Target className="w-8 h-8 text-blue-500" />,
-                title: "Content Audit & Gap Analysis",
-                description: "I audit existing pages to identify what's outdated, misaligned, or underperforming — and what's missing based on buyer stages and keyword intent."
+                title: "Use-Case Definition & Workflow Mapping",
+                description: "We start by identifying where an agent will deliver the most leverage — content creation, SEO assistance, summaries, customer support, or internal research."
               },
               {
-                icon: <Layout className="w-8 h-8 text-blue-500" />,
-                title: "Topic Clustering & Content Mapping",
-                description: "I organize topics into structured clusters that align with personas, funnel stages, and commercial goals — ensuring consistency and internal linking."
+                icon: <FileText className="w-8 h-8 text-blue-500" />,
+                title: "Training Material Curation",
+                description: "I collect your documents, writing samples, processes, tone guides, and past outputs to train the agent on how your business thinks and speaks."
               },
               {
-                icon: <BookOpen className="w-8 h-8 text-blue-500" />,
-                title: "Content Format Planning",
-                description: "I determine which content types support your goals: product-led blogs, comparison pages, service explainers, educational hubs, etc."
+                icon: <Settings className="w-8 h-8 text-blue-500" />,
+                title: "Instruction Engineering & Logic Building",
+                description: "I write the instructions that govern how your AI behaves — including rules, fallbacks, formatting styles, do's/don'ts, and response types."
               },
               {
-                icon: <Calendar className="w-8 h-8 text-blue-500" />,
-                title: "Content Calendar Creation",
-                description: "I build a full SEO content calendar tailored to your resources — broken into quarterly themes, monthly goals, and weekly execution plans."
+                icon: <Brain className="w-8 h-8 text-blue-500" />,
+                title: "Agent Build & Testing",
+                description: "I build your agent using platforms like ChatGPT, Claude, or open-source alternatives — and run multiple rounds of performance testing in real scenarios."
               },
               {
-                icon: <FileCheck className="w-8 h-8 text-blue-500" />,
-                title: "Briefing & Execution Roadmap",
-                description: "Each page is mapped with purpose, keywords, structure guidance, and internal link opportunities — ready to brief to your writers or execute through me."
+                icon: <Users className="w-8 h-8 text-blue-500" />,
+                title: "Deployment & Team Access",
+                description: "I integrate the agent into your preferred platform — whether that's inside ChatGPT, Slack, Notion, your CMS, or a custom UI — with full access control."
+              },
+              {
+                icon: <Zap className="w-8 h-8 text-blue-500" />,
+                title: "Iteration & Maintenance (Optional)",
+                description: "As your business evolves, I offer performance reviews, updates, and re-training to ensure your agent stays sharp, accurate, and aligned."
               }
             ].map((step, index) => (
               <div key={index} className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
@@ -274,20 +252,20 @@ const [formErrors, setFormErrors] = useState({
         </div>
       </section>
 
-      {/* Section 4: What You'll Receive */}
+      {/* What You'll Receive Section */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
-            A Clear Plan Built Around Buyers — Not Trends
+            A Fully Operational, Brand-Trained AI Agent — Not a Prototype
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              "Content strategy document (Google Doc or PDF)",
-              "User persona breakdown with search behavior insights",
-              "Content cluster map for 3–6 months",
-              "Monthly publishing calendar (editable)",
-              "Prioritized brief list by funnel stage and traffic opportunity",
-              "Optional 1:1 walkthrough call"
+              "Custom-trained AI agent built around your workflows",
+              "Detailed instruction logic + tone calibration",
+              "Integration into preferred platforms (ChatGPT Pro, Notion, Slack, etc.)",
+              "Usage guide + internal SOP for your team",
+              "Optional follow-up training or refinements",
+              "Ownership and adaptability — it's not locked into a tool you don't control"
             ].map((item, index) => (
               <div key={index} className="bg-gray-50 p-6 rounded-xl text-center">
                 <p className="text-lg text-gray-800">{item}</p>
@@ -297,19 +275,19 @@ const [formErrors, setFormErrors] = useState({
         </div>
       </section>
 
-      {/* Section 5: Who This Is For */}
+      {/* Who This Is For Section */}
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
-            This Strategy Is Right for You If…
+            This Is Built for You If…
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              "You've been publishing but aren't gaining traffic or traction",
-              "Your blog has no clear structure or direction",
-              "You don't know what content to create next — or why",
-              "You're targeting the wrong audience and seeing poor conversion",
-              "You want a system that can scale with your team or agency"
+              "You're spending hours doing work an AI could do in minutes — but can't risk sloppy results",
+              "You want a content or SEO assistant that actually understands your strategy",
+              "You've tried GPT tools but need something more structured, scalable, and controllable",
+              "You want to empower your team without adding headcount",
+              "You need AI built around your business — not someone else's prompts"
             ].map((item, index) => (
               <div key={index} className="bg-white p-6 rounded-xl shadow-sm">
                 <p className="text-lg text-gray-800">{item}</p>
@@ -324,10 +302,10 @@ const [formErrors, setFormErrors] = useState({
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-bold mb-6 text-center">
-              Get a Content Strategy That Moves the Right Metrics
+              Let's Build the AI Agent Your Business Deserves
             </h2>
             <p className="text-xl text-blue-100 mb-12 text-center">
-              Stop creating content for content's sake. Let's build a system that ranks, educates, and converts — mapped to your audience and your goals.
+              This isn't an experiment. It's a system — built once, used daily, and tailored to how your business thinks, speaks, and delivers value.
             </p>
             <form onSubmit={handleSubmit} className="bg-white rounded-xl p-8">
               <div className="grid md:grid-cols-2 gap-6 mb-6">
@@ -375,12 +353,12 @@ const [formErrors, setFormErrors] = useState({
                 />
               </div>
               <div className="mb-6">
-                <label htmlFor="challenge" className="block text-sm font-medium text-gray-700 mb-2">
-                  What's your current content challenge?
+                <label htmlFor="aiNeeds" className="block text-sm font-medium text-gray-700 mb-2">
+                  What would you like your AI assistant to handle?
                 </label>
                 <textarea
-                  id="challenge"
-                  name="challenge"
+                  id="aiNeeds"
+                  name="aiNeeds"
                   value={formData.queries}
                   onChange={handleChange}
                   rows={4}
@@ -392,7 +370,7 @@ const [formErrors, setFormErrors] = useState({
                 type="submit"
                 className="w-full bg-blue-500 text-white px-8 py-4 rounded-lg font-medium hover:bg-blue-600 transition flex items-center justify-center gap-2"
               >
-                Start With a Strategy Call <ArrowRight size={20} />
+                Request Your AI Agent Strategy Session <ArrowRight size={20} />
               </button>
             </form>
           </div>
@@ -401,4 +379,5 @@ const [formErrors, setFormErrors] = useState({
     </div>
   );
 };
-  export default ContentStrategy;
+
+export default CustomAIAgent;

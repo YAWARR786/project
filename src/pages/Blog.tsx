@@ -12,10 +12,15 @@ const Blog = () => {
   useEffect(() => {
     console.log("Loading blog posts...");
     const fetchPosts = async () => {
-      const data = await getPosts(10);
-      console.log("Loaded posts:", posts);
-      setPosts(data);
-      setLoading(false);
+      try {
+        const data = await getPosts(10);
+        console.log("Loaded posts:", data);
+        setPosts(data);
+      } catch (error) {
+        console.error("Error fetching posts in Blog.tsx:", error);
+      } finally {
+        setLoading(false);
+      }
     };
     fetchPosts();
   }, []);

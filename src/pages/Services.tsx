@@ -111,7 +111,7 @@ const Services: React.FC = () => {
     {
       id: 'GEO',
       icon: <FileEdit className="w-12 h-12 text-blue-500" />,
-      title: "Geo",
+      title: "Generative Engine Optimzation (GEO)",
       description: "Generative Engine Optimization (GEO) is about positioning your brand inside AI-generated answers",
       features: [
         "Keyword targeting guidance",

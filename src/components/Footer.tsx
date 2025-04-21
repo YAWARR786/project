@@ -161,7 +161,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a 
-                    href="https://twitter.com" 
+                    href="https://x.com/YawarKh0558563" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-blue-400 transition flex items-center group"
@@ -172,7 +172,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a 
-                    href="https://youtube.com" 
+                    href="https://www.instagram.com/__yawar_khan__" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-blue-400 transition flex items-center group"
@@ -211,15 +211,7 @@ const Footer = () => {
                     Terms of Service
                   </Link>
                 </li>
-                <li>
-                  <Link 
-                    to="/cookies" 
-                    className="text-gray-400 hover:text-blue-400 transition flex items-center group"
-                  >
-                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition"></span>
-                    Cookie Policy
-                  </Link>
-                </li>
+
               </ul>
             </div>
           </div>

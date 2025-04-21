@@ -84,7 +84,7 @@ const services = [
         link: "/services/Custom-AI-Agent-Creation"
       },
       {
-        title: "GEO",
+        title: "Generative Engine Optimzation (GEO)",
         description: "Generative Engine Optimization (GEO) is about positioning your brand inside AI-generated answers",
         icon: (
           <svg className="w-10 h-10 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">

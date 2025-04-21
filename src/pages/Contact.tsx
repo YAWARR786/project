@@ -64,7 +64,7 @@ const Contact: React.FC = () => {
     setSubmitStatus(null);
 
     try {
-      const scriptUrl = 'https://script.google.com/macros/s/AKfycby5jTELb4S02hlOwaFFtIUM6fgmuV-P_Fp7ij8vtnE9LolmkWe3WIXDA1aBinxgt0TM/exec';
+      const scriptUrl = 'https://script.google.com/macros/s/AKfycbwlzBiQ-6Ss1qccQCLZtVobaILd-PHKAJ2XtUE0_R0iHuzbVcFYHPtfiRPCMpx-Ig0-/exec';
       
       const response = await fetch(scriptUrl, {
         method: 'POST',
@@ -72,7 +72,10 @@ const Contact: React.FC = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          formType: 'service-geo' // or other service type
+        }),
       });
 
       setSubmitStatus({
