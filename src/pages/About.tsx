@@ -1,30 +1,89 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Award, Users, Globe, Briefcase } from 'lucide-react';
+import { ArrowLeft, Award, Users, Globe, Briefcase, ChevronDown } from 'lucide-react';
 
 const About: React.FC = () => {
+  const [activeValue, setActiveValue] = useState<number | null>(null);
+
   const stats = [
     {
       icon: <Award className="w-8 h-8 text-blue-500" />,
-      number: "8+",
+      number: "3+",
       label: "Years Experience",
     },
     {
       icon: <Users className="w-8 h-8 text-blue-500" />,
-      number: "200+",
+      number: "50+",
       label: "Happy Clients",
     },
     {
       icon: <Globe className="w-8 h-8 text-blue-500" />,
-      number: "30+",
+      number: "10+",
       label: "Countries Served",
     },
     {
       icon: <Briefcase className="w-8 h-8 text-blue-500" />,
-      number: "$1M+",
+      number: "$800k",
       label: "Revenue Generated",
     },
   ];
+
+  const values = [
+    {
+      title: "Results Matter More Than Rankings",
+      description: "Getting traffic is easy. What matters is turning that traffic into leads and sales. I focus on what actually helps your business grow - not just being visible.",
+      details: [
+        "Focus on conversion-driven SEO strategies",
+        "Track and measure real business impact",
+        "Prioritize revenue over vanity metrics",
+        "Build sustainable traffic sources"
+      ]
+    },
+    {
+      title: "No Buzzwords, Just Clarity",
+      description: "I keep things simple and honest. You'll always know what I'm doing, why it matters, and how it helps you - no confusing jargon or fluff.",
+      details: [
+        "Clear, jargon-free communication",
+        "Transparent reporting and updates",
+        "Actionable insights and recommendations",
+        "Regular strategy discussions"
+      ]
+    },
+    {
+      title: "Every Business Is Different",
+      description: "You're not like everyone else - so your SEO strategy shouldn't be either. I build plans based on your goals, not generic templates.",
+      details: [
+        "Customized SEO strategies",
+        "Industry-specific approach",
+        "Competitor analysis and differentiation",
+        "Unique value proposition focus"
+      ]
+    },
+    {
+      title: "I Treat Your Business Like Mine",
+      description: "I care deeply about the work I do. If I'm in, I'm all in - thinking about your growth like it's my own brand.",
+      details: [
+        "Proactive problem-solving",
+        "Long-term growth focus",
+        "Regular optimization suggestions",
+        "Strategic partnership approach"
+      ]
+    },
+    {
+      title: "No Quick Fixes - Only What Works Long-Term",
+      description: "Shortcuts don't last. I focus on strategies that are solid, sustainable, and actually move the needle over time.",
+      details: [
+        "White-hat SEO techniques only",
+        "Future-proof strategies",
+        "Sustainable growth patterns",
+        "Algorithm-resistant approaches"
+      ]
+    }
+  ];
+
+  const toggleValue = (index: number) => {
+    setActiveValue(activeValue === index ? null : index);
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -65,53 +124,95 @@ const About: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center mb-24">
           <div>
             <h2 className="text-3xl font-bold mb-6">My Story</h2>
-            <p className="text-gray-600 mb-6">
-              With over 8 years of experience in SEO and digital marketing, I've helped hundreds of businesses achieve their growth goals through strategic SEO implementation.
-            </p>
-            <p className="text-gray-600 mb-6">
-              My journey began in 2015 when I recognized the gap between technical SEO knowledge and business strategy. Since then, I've developed a unique approach that combines both elements to deliver measurable results.
-            </p>
-            <p className="text-gray-600">
-              Today, I work with businesses across various industries, from startups to enterprise companies, helping them achieve sustainable organic growth through proven SEO strategies.
-            </p>
+            <div className="space-y-6 text-lg leading-relaxed">
+              <p className="text-gray-600">
+                I'm <span className="font-bold">Yawar Khan</span>, and my journey didn't start in a shiny agency or with high-profile clients. It began in the lecture halls of <span className="font-bold">Jawaharlal Nehru University (JNU)</span> — one of India's most respected institutions for foreign language studies — where I earned both my graduation and master's in <span className="font-bold">Spanish and Latin American Studies</span>.
+              </p>
+              <p className="text-gray-600 italic">
+                Those years weren't just about mastering a language. They taught me the real power of communication — how the right words, at the right time, can build bridges and spark trust.
+              </p>
+              <p className="text-gray-600">
+                In my final semester, I took on a small freelance writing project. One gig led to another, and just like that, I found myself completely immersed in content writing. I loved how good writing could inform, engage, and move people — but soon realized content alone wasn't enough.
+              </p>
+              <p className="text-gray-600 font-semibold">
+                So I taught myself SEO.
+              </p>
+              <p className="text-gray-600 italic">
+                No mentors. No courses. Just countless nights learning how search engines work, breaking websites, fixing them, and slowly connecting the dots between visibility and conversions.
+              </p>
+              <p className="text-gray-600">
+                Over time, I saw the same problem everywhere: businesses were ranking — but not converting. That's where I stepped in, combining <span className="font-bold">technical SEO</span> with <span className="font-bold">content strategy</span> built for results.
+              </p>
+              <p className="text-gray-600">
+                Today, with <span className="font-bold">3+ years</span> of experience, <span className="font-bold">50+ clients</span> across <span className="font-bold">10+ countries</span>, and over <span className="font-bold">$800K</span> in added revenue, I help brands grow — not with gimmicks, but with systems that turn traffic into trust.
+              </p>
+              <p className="text-gray-600 italic">
+                What I bring to the table isn't just SEO. It's a mix of storytelling, strategy, and sharp thinking — turning passive visitors into paying customers.
+              </p>
+              <p className="text-gray-600 font-bold text-xl">
+                This has never been just about traffic. And it still isn't.
+              </p>
+              <p className="text-gray-600 text-xl font-semibold italic">
+                It's about understanding people — and building systems that help them find you, trust you, and choose you.
+              </p>
+            </div>
           </div>
           <div className="relative">
-            <img 
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800"
-              alt="Team collaboration"
-              className="rounded-xl shadow-lg"
-            />
-            <div className="absolute -bottom-6 -right-6 bg-blue-500 text-white p-6 rounded-xl shadow-xl">
-              <div className="text-4xl font-bold mb-1">200+</div>
-              <div className="text-blue-100">Projects<br/>Completed</div>
-            </div>
+            <video 
+              className="w-full rounded-xl shadow-lg"
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+            >
+              <source 
+                src="https://media-hosting.imagekit.io/b1c8566c8b51457d/Your%20paragraph%20text.mp4?Expires=1839231238&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=IL6yd~~F9nDzHtSxAvTsDanEcZ033LnwJZvEOYjiHZviBz9ZcJ~dq9Lm6ogJa5vmgHeQJYpwAnm3hGhJVAoW8aD9vFha1FCdzJZrHjcfDaRoDrODs5rvx8vzLOu8X6UtX-uVh-TI7gmfdmxvuUxox7uq7YFADGTCq3oiZDf6zSgH-hPcUXTUFsk9E29N6tNs-fGSgG45eV0ziEFjOrdVWM-LFypQg8GWnEtdj2gh0pKHFWmpOByGjIxAWHmtng5~Rk55vb9IfUaQ4ACHt46dEO5yXFJ1YgOj7UsaUsGPXvIFqwS9NrpBfB3mq3oj1w-kzXow0SHr1tvYpv7Is9IeFQ__"
+                type="video/mp4"
+              />
+            </video>
           </div>
         </div>
 
         {/* Values Section */}
         <div>
-          <h2 className="text-3xl font-bold mb-12 text-center">Our Values</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Data-Driven Approach",
-                description: "Every strategy is backed by comprehensive data analysis and research."
-              },
-              {
-                title: "Transparency",
-                description: "Clear communication and regular reporting on progress and results."
-              },
-              {
-                title: "Long-term Success",
-                description: "Focus on sustainable growth rather than quick, temporary wins."
-              }
-            ].map((value, index) => (
+          <h2 className="text-3xl font-bold mb-12 text-center">My Values</h2>
+          <div className="space-y-4">
+            {values.map((value, index) => (
               <div 
                 key={index}
-                className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition"
+                className="bg-white rounded-xl shadow-sm overflow-hidden transition-all duration-300"
               >
-                <h3 className="text-xl font-bold mb-4">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
+                <button
+                  onClick={() => toggleValue(index)}
+                  className="w-full px-8 py-6 flex items-center justify-between hover:bg-gray-50 transition-colors"
+                >
+                  <h3 className="text-xl font-bold text-left">{value.title}</h3>
+                  <ChevronDown 
+                    className={`w-6 h-6 text-gray-400 transition-transform duration-300 ${
+                      activeValue === index ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+                <div 
+                  className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                    activeValue === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  }`}
+                >
+                  <div className="px-8 pb-8">
+                    <p className="text-gray-600 mb-6">{value.description}</p>
+                    <ul className="space-y-3">
+                      {value.details.map((detail, detailIndex) => (
+                        <li 
+                          key={detailIndex}
+                          className="flex items-center text-gray-700"
+                        >
+                          <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                          {detail}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
