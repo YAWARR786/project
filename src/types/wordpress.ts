@@ -2,7 +2,7 @@
 import axios from 'axios';
 import { BlogPost } from './blog';
 
-const API_URL = 'https://springgreen-porcupine-350347.hostingersite.com/wp-json';
+const API_URL = 'https://aliceblue-frog-801440.hostingersite.com/wp-json';
 
 export const getPosts = async (perPage = 10) => {
   try {

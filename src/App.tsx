@@ -37,7 +37,7 @@ const BlogSection = () => {
         setError(null);
         
         const response = await fetch(
-          'https://springgreen-porcupine-350347.hostingersite.com/wp-json/wp/v2/posts?_embed&per_page=3'
+          'https://aliceblue-frog-801440.hostingersite.com/wp-json/wp/v2/posts?_embed&per_page=3'
         );
         
         if (!response.ok) {
@@ -455,7 +455,7 @@ const HomePage: React.FC = () => {
           <div className="flex flex-nowrap overflow-x-auto md:overflow-x-visible gap-8 pb-4 md:pb-0">
             {[
               { number: "136%", label: "Average Traffic Growth" },
-              { number: "$1M", label: "Additional Revenue" },
+              { number: "$800k", label: "Additional Revenue" },
               { number: "90%", label: "Clients on Page 1" },
               { number: "4.5x", label: "ROI on SEO Investment" }
             ].map((stat, index) => (
@@ -577,9 +577,11 @@ const HomePage: React.FC = () => {
           <p className="text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
             Get a free, comprehensive SEO audit worth $1,500. I'll analyze your site, compare it against competitors, and show you exactly how to outrank them.
           </p>
-          <button className="bg-blue-500 text-white px-8 py-4 rounded-lg font-medium hover:bg-blue-600 transition flex items-center gap-2 mx-auto text-lg">
+          <Link 
+                  to="/contact"
+           className="bg-blue-500 text-white px-8 py-4 rounded-lg font-medium hover:bg-blue-600 transition flex items-center gap-2 mx-auto text-lg">
             Get Your Free SEO Audit <ArrowRight size={20} />
-          </button>
+          </Link>
         </div>
       </section>
         <ScrollToTop />

@@ -113,28 +113,6 @@ const [formErrors, setFormErrors] = useState({
   
   return (
     <div className="min-h-screen bg-white">
-      <Helmet>
-        <title>Content Strategy Services | Transform Your Content Marketing</title>
-        <meta 
-          name="description" 
-          content="Professional content strategy services to align your content with business goals. Get a research-driven system that ranks, educates, and converts." 
-        />
-        <meta
-          name="keywords"
-          content="content strategy, SEO content, content marketing, content planning, content audit"
-        />
-        <meta property="og:title" content="Content Strategy Services | Transform Your Content Marketing" />
-        <meta property="og:description" content="Professional content strategy services to align your content with business goals." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourwebsite.com/content-strategy" />
-        <meta property="og:image" content="https://yourwebsite.com/images/content-strategy-og-image.jpg" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Content Strategy Services | Transform Your Content Marketing" />
-        <meta name="twitter:description" content="Professional content strategy services to align your content with business goals." />
-        <meta name="twitter:image" content="https://yourwebsite.com/images/content-strategy-og-image.jpg" />
-        <link rel="canonical" href="https://yourwebsite.com/content-strategy" />
-      </Helmet>
-      
        {/* Back to Home */}
     <div className="absolute top-6 right-6 z-10">
       <a
@@ -379,12 +357,12 @@ const [formErrors, setFormErrors] = useState({
                   What's your current content challenge?
                 </label>
                 <textarea
-                  id="challenge"
-                  name="challenge"
+                  id="queries"
+                  name="queries"
                   value={formData.queries}
                   onChange={handleChange}
                   rows={4}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black"
                   required
                 ></textarea>
               </div>

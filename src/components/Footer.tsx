@@ -81,6 +81,15 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link 
+                    to="/services/seo-content-briefs" 
+                    className="text-gray-400 hover:text-blue-400 transition flex items-center group"
+                  >
+                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition"></span>
+                    SEO Content Brief
+                  </Link>
+                </li>
+                <li>
+                  <Link 
                     to="/services/Custom-AI-Agent-Creation" 
                     className="text-gray-400 hover:text-blue-400 transition flex items-center group"
                   >
@@ -88,6 +97,7 @@ const Footer = () => {
                     Custom AI Agent Creation
                   </Link>
                 </li>
+                
                 <li>
                   <Link 
                     to="/services/GEO" 

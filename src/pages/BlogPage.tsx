@@ -15,7 +15,7 @@ const BlogPage = () => {
         setError(null);
         
         const response = await fetch(
-          'https://springgreen-porcupine-350347.hostingersite.com/wp-json/wp/v2/posts?_embed&per_page=100'
+          'https://aliceblue-frog-801440.hostingersite.com/wp-json/wp/v2/posts?_embed&per_page=100'
         );
         
         if (!response.ok) {
