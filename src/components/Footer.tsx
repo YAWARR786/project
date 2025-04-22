@@ -79,7 +79,7 @@ const Footer = () => {
                     Local SEO Optimization
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link 
                     to="/services/seo-content-briefs" 
                     className="text-gray-400 hover:text-blue-400 transition flex items-center group"
@@ -87,7 +87,7 @@ const Footer = () => {
                     <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition"></span>
                     SEO Content Brief
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link 
                     to="/services/Custom-AI-Agent-Creation" 
@@ -229,12 +229,13 @@ const Footer = () => {
           {/* Bottom Footer */}
           <div className="border-t border-gray-800 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-4 md:mb-0">
-              <Link to="/" className="flex items-center">
-                <svg className="w-8 h-8 text-blue-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"></path>
-                </svg>
-                <span className="text-xl font-bold">SEOConsult</span>
-              </Link>
+              <Link to="/" className="text-2xl font-bold text-blue-900">
+                          <img 
+                          src="https://i.ibb.co/cc4HktwD/Subheading-1472-x-372-px.png" 
+                          alt="SEO Expert Logo" 
+                          className="h-20 w-auto" 
+                        />
+                          </Link>
               <span className="text-gray-400 ml-4">© {new Date().getFullYear()} All rights reserved.</span>
             </div>
           </div>

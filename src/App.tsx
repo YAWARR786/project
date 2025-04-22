@@ -433,7 +433,15 @@ const HomePage: React.FC = () => {
             <p className="text-xl text-gray-600 mb-12">
               With 3+ years of hands-on experience across 50+ brands, I build SEO systems that don't just rank - they grow revenue. Every move I make is rooted in data, driven by strategy, and aligned with real business goals.
             </p>
-            <button className="flex items-center gap-2 bg-gray-900 text-white px-8 py-4 rounded-lg font-medium hover:bg-gray-800 transition text-lg">
+            <button
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = 'https://docs.google.com/document/d/1gQNswrPK4h7YgS0Fc-mJobFiqN-Wq_40e5Jd4Yip-H0/export?format=pdf';
+                link.download = 'SEO-Framework.pdf';
+                link.click();
+              }}
+              className="flex items-center gap-2 bg-gray-900 text-white px-8 py-4 rounded-lg font-medium hover:bg-gray-800 transition text-lg"
+            >
               Download My SEO Framework <Download size={20} />
             </button>
           </div>
@@ -577,11 +585,11 @@ const HomePage: React.FC = () => {
           <p className="text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
             Get a free, comprehensive SEO audit worth $1,500. I'll analyze your site, compare it against competitors, and show you exactly how to outrank them.
           </p>
-          <Link 
-                  to="/contact"
-           className="bg-blue-500 text-white px-8 py-4 rounded-lg font-medium hover:bg-blue-600 transition flex items-center gap-2 mx-auto text-lg">
-            Get Your Free SEO Audit <ArrowRight size={20} />
-          </Link>
+          <Link to="/contact">
+      <button className="bg-blue-500 text-white px-8 py-4 rounded-lg font-medium hover:bg-blue-600 transition flex items-center gap-2 mx-auto text-lg">
+        Get Your Free SEO Audit <ArrowRight size={20} />
+      </button>
+    </Link>
         </div>
       </section>
         <ScrollToTop />

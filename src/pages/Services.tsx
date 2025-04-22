@@ -95,19 +95,19 @@ const Services: React.FC = () => {
         "Review management"
       ]
     },
-    {
-      id: 'seo-content-briefs',
-      icon: <MapPin className="w-12 h-12 text-blue-500" />,
-      title: "SEO Content Brief",
-      description: "Boost your local search presence and get found by customers in your area.",
-      features: [
-        "Google My Business optimization",
-        "Local citations building",
-        "NAP consistency audit",
-        "Localized content strategy",
-        "Review management"
-      ]
-    },
+    // {
+    //   id: 'seo-content-briefs',
+    //   icon: <MapPin className="w-12 h-12 text-blue-500" />,
+    //   title: "SEO Content Brief",
+    //   description: "Boost your local search presence and get found by customers in your area.",
+    //   features: [
+    //     "Google My Business optimization",
+    //     "Local citations building",
+    //     "NAP consistency audit",
+    //     "Localized content strategy",
+    //     "Review management"
+    //   ]
+    // },
     {
       id: 'Custom-AI-Agent-Creation',
       icon: <FileEdit className="w-12 h-12 text-blue-500" />,
