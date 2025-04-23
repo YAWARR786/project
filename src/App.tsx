@@ -325,12 +325,6 @@ const HomePage: React.FC = () => {
                 >
                   Get Your Free SEO Audit <ArrowRight size={20} />
                 </Link>
-                <Link
-                  to="/process"
-                  className="border-2 border-white/30 text-white px-8 py-4 rounded-lg font-medium hover:bg-white/10 transition flex items-center gap-2 text-lg"
-                >
-                  View Results <BarChart size={20} />
-                </Link>
               </div>
             </div>
             <div className="lg:col-span-5">
