@@ -206,11 +206,18 @@ const About: React.FC = () => {
             </div>
           </div>
           <div className="relative">
-            <iframe
-              src="https://imagekit.io/player/embed/aeduijn8u/Your%20paragraph%20text.mp4?updatedAt=1752056927868&thumbnail=https%3A%2F%2Fik.imagekit.io%2Faeduijn8u%2FYour%2520paragraph%2520text.mp4%2Fik-thumbnail.jpg%3FupdatedAt%3D1752056927868&updatedAt=1752056927868.mp4"
+            <video
               className="w-full rounded-xl shadow-lg"
-              allow="autoplay; fullscreen"
-            ></iframe>
+              autoPlay
+              loop
+              muted
+              playsInline
+            >
+              <source
+                src="https://ik.imagekit.io/aeduijn8u/Your%20paragraph%20text.mp4?tr=orig&updatedAt=1752056927868.mp4"
+                type="video/mp4"
+              />
+            </video>
           </div>
         </div>
 
