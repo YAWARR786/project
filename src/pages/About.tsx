@@ -142,66 +142,87 @@ const About: React.FC = () => {
             <h2 className="text-3xl font-bold mb-6">My Story</h2>
             <div className="space-y-6 text-lg leading-relaxed">
               <p className="text-gray-600">
-                I'm <span className="font-bold">Yawar Khan</span>, and my
-                journey didn't start in a shiny agency or with high-profile
-                clients. It began in the lecture halls of{" "}
+                I’m <span className="font-bold">Yawar Khan</span>, and my career
+                began in the lecture halls of{" "}
                 <span className="font-bold">
-                  Jawaharlal Nehru University (JNU)
+                  Jawaharlal Nehru University
                 </span>{" "}
-                — one of India's most respected institutions for foreign
-                language studies — where I earned both my graduation and
-                master's in{" "}
+                , one of India’s leading institutions for foreign language
+                studies. I completed both my graduation and master’s degree in{" "}
                 <span className="font-bold">
                   Spanish and Latin American Studies
                 </span>
-                .
-              </p>
-              <p className="text-gray-600 italic">
-                Those years weren't just about mastering a language. They taught
-                me the real power of communication — how the right words, at the
-                right time, can build bridges and spark trust.
+                {" "}there.
               </p>
               <p className="text-gray-600">
-                In my final semester, I took on a small freelance writing
-                project. One gig led to another, and just like that, I found
-                myself completely immersed in content writing. I loved how good
-                writing could inform, engage, and move people — but soon
-                realized content alone wasn't enough.
+                Studying language taught me more than grammar and vocabulary. It
+                showed me how communication shapes the way people understand,
+                connect with, and trust one another.
+              </p>
+              <p className="text-gray-600">
+                During my final semester, I accepted a small freelance writing
+                project. That project led to another, and before long, I was
+                working regularly as a{" "}
+                <span className="font-bold">content writer</span>. I enjoyed
+                creating content that helped people learn, solve problems, and
+                make decisions. But as I gained more experience, I realised that
+                even well-written content had little value if the right people
+                could not find it.
               </p>
               <p className="text-gray-600 font-semibold">
-                So I taught myself SEO.
-              </p>
-              <p className="text-gray-600 italic">
-                No mentors. No courses. Just countless nights learning how
-                search engines work, breaking websites, fixing them, and slowly
-                connecting the dots between visibility and conversions.
+                That curiosity led me to <span className="font-bold">SEO</span>.
               </p>
               <p className="text-gray-600">
-                Over time, I saw the same problem everywhere: businesses were
-                ranking — but not converting. That's where I stepped in,
-                combining <span className="font-bold">technical SEO</span> with{" "}
-                <span className="font-bold">content strategy</span> built for
-                results.
+                I learned it through hands-on work, late-night research, plenty
+                of mistakes, and a lot of testing. I studied how search engines
+                worked, experimented with websites, fixed what went wrong, and
+                gradually understood how{" "}
+                <span className="font-bold">
+                  content, rankings, user experience, and conversions
+                </span>{" "}
+                worked together.
               </p>
               <p className="text-gray-600">
-                Today, with <span className="font-bold">3+ years</span> of
-                experience, <span className="font-bold">50+ clients</span>{" "}
-                across <span className="font-bold">10+ countries</span>, and
-                over <span className="font-bold">$800K</span> in added revenue,
-                I help brands grow — not with gimmicks, but with systems that
-                turn traffic into trust.
+                While working with different businesses, I noticed a common
+                problem. Many websites were attracting traffic, but that traffic
+                was not turning into enquiries or sales.
               </p>
-              <p className="text-gray-600 italic">
-                What I bring to the table isn't just SEO. It's a mix of
-                storytelling, strategy, and sharp thinking — turning passive
-                visitors into paying customers.
+              <p className="text-gray-600 font-semibold">
+                That became the focus of my work.
+              </p>
+              <p className="text-gray-600">
+                Today, I combine{" "}
+                <span className="font-bold">
+                  technical SEO, content strategy, and conversion-focused
+                  thinking
+                </span>{" "}
+                to help businesses attract the right audience and turn visitors
+                into customers.
+              </p>
+              <p className="text-gray-600">
+                Over the past <span className="font-bold">three years</span>, I
+                have worked with{" "}
+                <span className="font-bold">
+                  more than 50 clients across 10 countries
+                </span>{" "}
+                and helped generate{" "}
+                <span className="font-bold">
+                  over $800,000 in additional revenue
+                </span>
+                .
+              </p>
+              <p className="text-gray-600">
+                My work is not only about improving rankings. It is about
+                understanding what people are searching for, what they need to
+                see before making a decision, and how a business can earn their
+                trust.
               </p>
               <p className="text-gray-600 font-bold text-xl">
-                This has never been just about traffic. And it still isn't.
+                Because traffic alone does not grow a business.
               </p>
               <p className="text-gray-600 text-xl font-semibold italic">
-                It's about understanding people — and building systems that help
-                them find you, trust you, and choose you.
+                The right people finding you, trusting you, and choosing you
+                does.
               </p>
             </div>
           </div>
