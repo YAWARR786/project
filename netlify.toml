@@ -1,4 +1,29 @@
 [[redirects]]
-  from = "/*"
+  from = "/services/Custom-AI-Agent-Creation"
+  to = "/services/custom-ai-agent-creation"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/GEO"
+  to = "/services/geo"
+  status = 301
+  force = true
+
+# WordPress article URLs continue to fall back to the React app until the real
+# CMS is connected. Netlify file shadowing lets any future pre-rendered article
+# HTML take precedence over this fallback automatically.
+[[redirects]]
+  from = "/blog/*"
   to = "/index.html"
   status = 200
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/og-default.png"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"

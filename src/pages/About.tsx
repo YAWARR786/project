@@ -212,6 +212,7 @@ const About: React.FC = () => {
               loop
               muted
               playsInline
+              preload="metadata"
             >
               <source
                 src="https://ik.imagekit.io/aeduijn8u/Your%20paragraph%20text.mp4?tr=orig&updatedAt=1752056927868.mp4"

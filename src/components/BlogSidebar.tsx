@@ -40,6 +40,8 @@ const BlogSidebar = ({ currentPostId }: { currentPostId?: number }) => {
                       src={post.image_url}
                       alt=""
                       className="w-16 h-16 object-cover rounded"
+                      loading="lazy"
+                      decoding="async"
                     />
                   )}
                   <span className="font-medium">{post.title.rendered}</span>

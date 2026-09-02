@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { lazy, Suspense, useState, useEffect } from "react";
 import {
   Routes,
   Route,
   Link,
-  BrowserRouter,
   useLocation,
+  Navigate,
 } from "react-router-dom";
 import {
   ArrowRight,
@@ -31,27 +31,33 @@ import {
 import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
 import EnhancedServicesSection from "./components/EnhancedServicesSection";
-import Services from "./pages/Services";
-import About from "./pages/About";
-import Process from "./pages/Process";
-import Contact from "./pages/Contact";
-import TechnicalSeoAudit from "./pages/TechnicalSeoAudit";
-import ContentStrategy from "./pages/ContentStrategy";
-import InternationalSeo from "./pages/InternationalSEO";
-import LocalSeo from "./pages/LocalSeoOptimization";
-import SeoAnalytics from "./pages/SEO Analytics";
-import SeoBlogs from "./pages/SEOBlogs";
-import SEOContentBriefs from "./pages/SEOContentBriefs";
-import KeywordStrategy from "./pages/KeywordStrategy";
 import TestimonialSlider from "./components/TestimonialSlider";
 import { BlogPost } from "./types/blog";
-import BlogPostComponent from "./pages/BlogPost";
-import GEO from "./pages/GEO";
-import CustomAIAgent from "./pages/CustomAIAgent";
-import BlogPage from "./pages/BlogPage";
-import PrivacyPolicy from "./pages/PrivacyPolicy ";
-import TermsOfService from "./pages/TermsAndService";
-import BookCall from "./pages/BookCall";
+import SEOManager from "./components/SEOManager";
+import { getPostsOrThrow } from "./types/wordpress";
+
+// Route-level code splitting keeps non-home pages out of the initial homepage bundle.
+// The production prerender waits for these chunks, so search engines still receive full HTML.
+const Services = lazy(() => import("./pages/Services"));
+const About = lazy(() => import("./pages/About"));
+const Process = lazy(() => import("./pages/Process"));
+const Contact = lazy(() => import("./pages/Contact"));
+const TechnicalSeoAudit = lazy(() => import("./pages/TechnicalSeoAudit"));
+const ContentStrategy = lazy(() => import("./pages/ContentStrategy"));
+const InternationalSeo = lazy(() => import("./pages/InternationalSEO"));
+const LocalSeo = lazy(() => import("./pages/LocalSeoOptimization"));
+const SeoAnalytics = lazy(() => import("./pages/SEO Analytics"));
+const SeoBlogs = lazy(() => import("./pages/SEOBlogs"));
+const SEOContentBriefs = lazy(() => import("./pages/SEOContentBriefs"));
+const KeywordStrategy = lazy(() => import("./pages/KeywordStrategy"));
+const BlogPostComponent = lazy(() => import("./pages/BlogPost"));
+const GEO = lazy(() => import("./pages/GEO"));
+const CustomAIAgent = lazy(() => import("./pages/CustomAIAgent"));
+const BlogPage = lazy(() => import("./pages/BlogPage"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy "));
+const TermsOfService = lazy(() => import("./pages/TermsAndService"));
+const BookCall = lazy(() => import("./pages/BookCall"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 const BlogSection = () => {
   const [posts, setPosts] = useState<BlogPost[]>([]);
@@ -64,50 +70,10 @@ const BlogSection = () => {
         setLoading(true);
         setError(null);
 
-        const response = await fetch(
-          "https://aliceblue-frog-801440.hostingersite.com/wp-json/wp/v2/posts?_embed&per_page=3"
-        );
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const data = await response.json();
-
-        // Transform WordPress data to match BlogPost type
-        const formattedPosts = data.map((post: any) => {
-          const featuredMedia = post._embedded?.["wp:featuredmedia"]?.[0];
-          const terms = post._embedded?.["wp:term"]?.flat() || [];
-          const categories = terms.filter(
-            (t: any) => t.taxonomy === "category"
-          );
-          const tags = terms.filter((t: any) => t.taxonomy === "post_tag");
-
-          return {
-            id: post.id,
-            date: post.date,
-            slug: post.slug,
-            title: {
-              rendered: post.title.rendered,
-            },
-            content: {
-              rendered: post.content.rendered,
-            },
-            excerpt: {
-              rendered: post.excerpt.rendered.replace(/<[^>]+>/g, ""), // Remove HTML tags
-            },
-            image_url: featuredMedia?.source_url || "/default-blog-image.jpg",
-            category: categories[0]?.name || "Uncategorized",
-            read_time:
-              Math.ceil(post.content.rendered.split(" ").length / 200) || 5,
-            yoast_head_json: post.yoast_head_json,
-            _embedded: post._embedded,
-          } as BlogPost;
-        });
-
-        setPosts(formattedPosts);
+        const latestPosts = await getPostsOrThrow(3);
+        setPosts(latestPosts);
       } catch (error) {
-        console.error("Error fetching WordPress posts:", error);
+        console.error("Error fetching blog posts:", error);
         setError("Failed to load blog posts. Please try again later.");
       } finally {
         setLoading(false);
@@ -197,9 +163,11 @@ const BlogSection = () => {
                   <Link to={`/blog/${post.slug}`} className="block h-full">
                     <div className="relative overflow-hidden rounded-xl mb-6 h-64">
                       <img
-                        src={post.image_url || "/default-blog-image.jpg"}
-                        alt={post.title.rendered}
+                        src={post.image_url || "/og-default.png"}
+                        alt={post.image_alt || post.title.rendered}
                         className="w-full h-full object-cover"
+                        loading="lazy"
+                        decoding="async"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
@@ -428,6 +396,9 @@ const HomePage: React.FC = () => {
                   src="https://ik.imagekit.io/aeduijn8u/Website-Photoroom.jpg?updatedAt=1752058671465"
                   alt="SEO Consultant"
                   className="w-full h-full object-cover"
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
                 />
               </div>
             </div>
@@ -493,6 +464,7 @@ const HomePage: React.FC = () => {
                       alt={brand.name}
                       className="h-full w-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
                       loading="lazy"
+                      decoding="async"
                     />
                     <div className="absolute inset-0 bg-blue-500 rounded-full opacity-0 group-hover:opacity-10 blur-md group-hover:scale-110 transition-all duration-500"></div>
                   </div>
@@ -811,9 +783,11 @@ const AppLayout = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SEOManager />
       {/* Main content area */}
       <main className="flex-grow">
-        <Routes>
+        <Suspense fallback={<div className="min-h-screen bg-white" aria-hidden="true" />}>
+          <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<BlogPostComponent />} />
@@ -836,7 +810,7 @@ const AppLayout = () => {
           <Route path="/services/seo-blogs" element={<SeoBlogs />} />
           <Route path="/services/local-seo" element={<LocalSeo />} />
           <Route
-            path="/services/Custom-AI-Agent-Creation"
+            path="/services/custom-ai-agent-creation"
             element={<CustomAIAgent />}
           />
           <Route
@@ -847,12 +821,16 @@ const AppLayout = () => {
             path="/services/seo-content-briefs"
             element={<SEOContentBriefs />}
           />
-          <Route path="/services/GEO" element={<GEO />} />
+          <Route path="/services/geo" element={<GEO />} />
           <Route path="/about" element={<About />} />
           <Route path="/process" element={<Process />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/book-call" element={<BookCall />} />
-        </Routes>
+          <Route path="/services/Custom-AI-Agent-Creation" element={<Navigate to="/services/custom-ai-agent-creation" replace />} />
+          <Route path="/services/GEO" element={<Navigate to="/services/geo" replace />} />
+          <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
       </main>
 
       {/* Conditionally render footer */}
@@ -869,7 +847,6 @@ const App: React.FC = () => {
       {/* Admin routes */}
       {/* <Route path="/admin/blog/new" element={<BlogEditor />} />
       <Route path="/admin/blog/edit/:slug" element={<BlogEditor />} /> */}
-      o
     </Routes>
   );
 };

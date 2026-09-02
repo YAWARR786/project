@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowLeft, Home, Clock, Tag } from 'lucide-react';
 import { BlogPost } from '../types/blog';
+import { getPostsOrThrow } from '../types/wordpress';
 
 const BlogPage = () => {
   const [posts, setPosts] = useState<BlogPost[]>([]);
@@ -13,47 +14,17 @@ const BlogPage = () => {
       try {
         setLoading(true);
         setError(null);
-        
-        const response = await fetch(
-          'https://aliceblue-frog-801440.hostingersite.com/wp-json/wp/v2/posts?_embed&per_page=100'
-        );
-        
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
-        const data = await response.json();
-        
-        const formattedPosts = data.map((post: any) => {
-          const featuredMedia = post._embedded?.['wp:featuredmedia']?.[0];
-          const terms = post._embedded?.['wp:term']?.flat() || [];
-          const categories = terms.filter((t: any) => t.taxonomy === 'category');
-          
-          return {
-            id: post.id,
-            date: post.date,
-            slug: post.slug,
-            title: {
-              rendered: post.title.rendered
-            },
-            excerpt: {
-              rendered: post.excerpt.rendered.replace(/<[^>]+>/g, '')
-            },
-            image_url: featuredMedia?.source_url || '/default-blog-image.jpg',
-            category: categories[0]?.name || 'Uncategorized',
-            read_time: Math.ceil(post.content.rendered.split(' ').length / 200) || 5
-          } as BlogPost;
-        });
-        
-        setPosts(formattedPosts);
+
+        const allPosts = await getPostsOrThrow(100);
+        setPosts(allPosts);
       } catch (error) {
-        console.error('Error fetching WordPress posts:', error);
+        console.error('Error fetching blog posts:', error);
         setError('Failed to load blog posts. Please try again later.');
       } finally {
         setLoading(false);
       }
     };
-    
+
     fetchAllPosts();
   }, []);
 
@@ -171,9 +142,11 @@ const BlogPage = () => {
                 <Link to={`/blog/${post.slug}`} className="block h-full">
                   <div className="relative overflow-hidden h-64">
                     <img 
-                      src={post.image_url} 
-                      alt={post.title.rendered}
+                      src={post.image_url || "/og-default.png"} 
+                      alt={post.image_alt || post.title.rendered}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                      decoding="async"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-100"></div>
                     <div className="absolute bottom-4 left-4">

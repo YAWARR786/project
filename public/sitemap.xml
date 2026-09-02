@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-<url>
-  <loc>https://ranknconvert.com/</loc>
-  <lastmod>2025-04-22T09:41:04+00:00</lastmod>
-</url>
-
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://ranknconvert.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://ranknconvert.com/services</loc><priority>0.9</priority></url>
+  <url><loc>https://ranknconvert.com/services/technical-seo-audit</loc><priority>0.8</priority></url>
+  <url><loc>https://ranknconvert.com/services/content-strategy</loc><priority>0.8</priority></url>
+  <url><loc>https://ranknconvert.com/services/keyword-strategy</loc><priority>0.8</priority></url>
+  <url><loc>https://ranknconvert.com/services/seo-analytics</loc><priority>0.8</priority></url>
+  <url><loc>https://ranknconvert.com/services/seo-blogs</loc><priority>0.8</priority></url>
+  <url><loc>https://ranknconvert.com/services/local-seo</loc><priority>0.8</priority></url>
+  <url><loc>https://ranknconvert.com/services/custom-ai-agent-creation</loc><priority>0.7</priority></url>
+  <url><loc>https://ranknconvert.com/services/international-seo</loc><priority>0.8</priority></url>
+  <url><loc>https://ranknconvert.com/services/seo-content-briefs</loc><priority>0.8</priority></url>
+  <url><loc>https://ranknconvert.com/services/geo</loc><priority>0.8</priority></url>
+  <url><loc>https://ranknconvert.com/about</loc><priority>0.6</priority></url>
+  <url><loc>https://ranknconvert.com/process</loc><priority>0.6</priority></url>
+  <url><loc>https://ranknconvert.com/contact</loc><priority>0.6</priority></url>
+  <url><loc>https://ranknconvert.com/blog</loc><priority>0.8</priority></url>
 </urlset>

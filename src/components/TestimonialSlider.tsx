@@ -120,6 +120,8 @@ const TestimonialSlider: React.FC = () => {
                       src={testimonials[currentIndex].image}
                       alt={testimonials[currentIndex].name}
                       className="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <div className="p-8 md:p-12 md:w-3/5">

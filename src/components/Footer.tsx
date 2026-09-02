@@ -117,7 +117,7 @@ const Footer = () => {
                 </li> */}
                 <li>
                   <Link 
-                    to="/services/Custom-AI-Agent-Creation" 
+                    to="/services/custom-ai-agent-creation" 
                     className="text-gray-400 hover:text-blue-400 transition flex items-center group"
                   >
                     <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition"></span>
@@ -127,7 +127,7 @@ const Footer = () => {
                 
                 <li>
                   <Link 
-                    to="/services/GEO" 
+                    to="/services/geo" 
                     className="text-gray-400 hover:text-blue-400 transition flex items-center group"
                   >
                     <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition"></span>
@@ -261,6 +261,8 @@ const Footer = () => {
                           src="https://i.ibb.co/cc4HktwD/Subheading-1472-x-372-px.png" 
                           alt="SEO Expert Logo" 
                           className="h-20 w-auto" 
+                          loading="lazy"
+                          decoding="async"
                         />
                           </Link>
               <span className="text-gray-400 ml-4">© {new Date().getFullYear()} All rights reserved.</span>

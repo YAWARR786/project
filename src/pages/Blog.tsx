@@ -66,6 +66,8 @@ const Blog = () => {
                         src={post.image_url}
                         alt={post.title.rendered}
                         className="w-full h-64 object-cover mb-4 rounded-lg"
+                        loading="lazy"
+                        decoding="async"
                       />
                     )}
 
