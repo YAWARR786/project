@@ -89,7 +89,7 @@ const [formErrors, setFormErrors] = useState({
         // So we'll assume success if we get any response
         setSubmitStatus({
           success: true,
-          message: 'Thank you for your interest in GEO services! We will contact you soon.'
+          message: "Thank you for your interest! I’ll contact you soon."
         });
         
         // Reset form
@@ -208,7 +208,7 @@ const [formErrors, setFormErrors] = useState({
               {
                 icon: <Target className="w-8 h-8 text-blue-500" />,
                 title: "Use-Case Definition & Workflow Mapping",
-                description: "We start by identifying where an agent will deliver the most leverage — content creation, SEO assistance, summaries, customer support, or internal research."
+                description: "I start by identifying where an agent will deliver the most leverage — content creation, SEO assistance, summaries, customer support, or internal research."
               },
               {
                 icon: <FileText className="w-8 h-8 text-blue-500" />,

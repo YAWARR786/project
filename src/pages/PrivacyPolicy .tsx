@@ -25,10 +25,10 @@ const PrivacyPolicy = () => {
 
       <Box mb={4}>
         <Typography variant="body1" paragraph>
-          This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.
+          This Privacy Policy describes my policies and procedures on the collection, use, and disclosure of your information when you use the Service. It also explains your privacy rights and how the law protects you.
         </Typography>
         <Typography variant="body1" paragraph>
-          We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy.
+          I use your Personal Data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this Privacy Policy.
         </Typography>
       </Box>
 
@@ -47,9 +47,9 @@ const PrivacyPolicy = () => {
             For the purposes of this Privacy Policy:
           </Typography>
           <ul>
-            <li><Typography variant="body1"><strong>Account</strong> means a unique account created for You to access our Service or parts of our Service.</Typography></li>
+            <li><Typography variant="body1"><strong>Account</strong> means a unique account created for you to access my Service or parts of my Service.</Typography></li>
             <li><Typography variant="body1"><strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party.</Typography></li>
-            <li><Typography variant="body1"><strong>Company</strong> (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to Rank N Convert.</Typography></li>
+            <li><Typography variant="body1"><strong>Company</strong> refers to Rank N Convert. In this Privacy Policy, references to "I", "me", or "my" refer to the operator of Rank N Convert.</Typography></li>
             <li><Typography variant="body1"><strong>Cookies</strong> are small files placed on Your device to track browsing history.</Typography></li>
             <li><Typography variant="body1"><strong>Country</strong> refers to: Uttar Pradesh, India</Typography></li>
             <li><Typography variant="body1"><strong>Device</strong> means any device that can access the Service.</Typography></li>
@@ -69,7 +69,7 @@ const PrivacyPolicy = () => {
           
           <Typography variant="subtitle2" gutterBottom>Personal Data</Typography>
           <Typography variant="body1" paragraph>
-            While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:
+            While using my Service, I may ask you to provide me with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information may include, but is not limited to:
           </Typography>
           <ul>
             <li><Typography variant="body1">Email address</Typography></li>
@@ -91,14 +91,14 @@ const PrivacyPolicy = () => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography variant="body1" paragraph>
-            We use Cookies and similar tracking technologies to track activity on Our Service and store certain information. The technologies We use may include:
+            I use Cookies and similar tracking technologies to track activity on my Service and store certain information. The technologies I use may include:
           </Typography>
           <ul>
-            <li><Typography variant="body1"><strong>Cookies or Browser Cookies.</strong> A small file placed on Your Device. You can instruct Your browser to refuse all Cookies, but some parts of our Service may not function properly without them.</Typography></li>
-            <li><Typography variant="body1"><strong>Web Beacons.</strong> Small electronic files that permit us to count users and gather website statistics.</Typography></li>
+            <li><Typography variant="body1"><strong>Cookies or Browser Cookies.</strong> A small file placed on Your Device. You can instruct Your browser to refuse all Cookies, but some parts of my Service may not function properly without them.</Typography></li>
+            <li><Typography variant="body1"><strong>Web Beacons.</strong> Small electronic files that allow me to count users and gather website statistics.</Typography></li>
           </ul>
           <Typography variant="body1" paragraph mt={2}>
-            We use both Session and Persistent Cookies for authentication, remembering preferences, and improving user experience.
+            I use both Session and Persistent Cookies for authentication, remembering preferences, and improving user experience.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -112,7 +112,7 @@ const PrivacyPolicy = () => {
             The Company may use Personal Data for the following purposes:
           </Typography>
           <ul>
-            <li><Typography variant="body1">To provide and maintain our Service</Typography></li>
+            <li><Typography variant="body1">To provide and maintain my Service</Typography></li>
             <li><Typography variant="body1">To manage Your Account</Typography></li>
             <li><Typography variant="body1">For contract performance</Typography></li>
             <li><Typography variant="body1">To contact You</Typography></li>
@@ -129,7 +129,7 @@ const PrivacyPolicy = () => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography variant="body1" paragraph>
-            The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We implement security measures to protect Your data, but no method of transmission over the Internet is 100% secure.
+            Rank N Convert will retain your Personal Data only for as long as necessary for the purposes set out in this Privacy Policy. I implement security measures to protect your data, but no method of transmission over the Internet is 100% secure.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -140,7 +140,7 @@ const PrivacyPolicy = () => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography variant="body1" paragraph>
-            Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us.
+            My Service does not address anyone under the age of 13. I do not knowingly collect personally identifiable information from children under 13. If you are a parent or guardian and you are aware that your child has provided me with Personal Data, please contact me.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -151,15 +151,15 @@ const PrivacyPolicy = () => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography variant="body1" paragraph>
-            We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.
+            I may update this Privacy Policy from time to time. I will notify you of changes by posting the new Privacy Policy on this page and updating the "Last updated" date.
           </Typography>
         </AccordionDetails>
       </Accordion>
 
       <Box mt={4}>
-        <Typography variant="h6" gutterBottom>Contact Us</Typography>
+        <Typography variant="h6" gutterBottom>Contact Me</Typography>
         <Typography variant="body1">
-          If you have any questions about this Privacy Policy, You can contact us:
+          If you have any questions about this Privacy Policy, you can contact me:
         </Typography>
         <Typography variant="body1">
           By email: <Link href="mailto:yawarkhanmbd789@gmail.com">yawarkhanmbd789@gmail.com</Link>

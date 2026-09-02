@@ -23,6 +23,10 @@ import {
   Zap,
   Menu,
   X,
+  CalendarDays,
+  CheckCircle2,
+  Clock3,
+  Sparkles,
 } from "lucide-react";
 import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
@@ -47,6 +51,7 @@ import CustomAIAgent from "./pages/CustomAIAgent";
 import BlogPage from "./pages/BlogPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy ";
 import TermsOfService from "./pages/TermsAndService";
+import BookCall from "./pages/BookCall";
 
 const BlogSection = () => {
   const [posts, setPosts] = useState<BlogPost[]>([]);
@@ -309,9 +314,16 @@ const HomePage: React.FC = () => {
               </Link>
               <Link
                 to="/contact"
-                className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition"
+                className="text-gray-600 hover:text-blue-600 transition"
               >
                 Contact
+              </Link>
+              <Link
+                to="/book-call"
+                className="group inline-flex items-center gap-2 rounded-xl bg-blue-500 px-5 py-2.5 font-semibold text-white shadow-lg shadow-blue-500/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-blue-600 hover:shadow-blue-500/30"
+              >
+                <CalendarDays size={18} />
+                Book a Call
               </Link>
             </div>
           </div>
@@ -349,10 +361,18 @@ const HomePage: React.FC = () => {
               </Link>
               <Link
                 to="/contact"
-                className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition inline-block text-center"
+                className="text-gray-600 hover:text-blue-600 transition"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
+              </Link>
+              <Link
+                to="/book-call"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-500 px-6 py-3 font-semibold text-white shadow-lg shadow-blue-500/20 transition hover:bg-blue-600"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <CalendarDays size={18} />
+                Book a Free 30-Min Call
               </Link>
             </div>
           </div>
@@ -380,13 +400,26 @@ const HomePage: React.FC = () => {
                 Every move I make is rooted in data, driven by strategy, and
                 aligned with real business goals.
               </p>
-              <div className="flex gap-6">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+                <Link
+                  to="/book-call"
+                  className="cta-shine group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-blue-500 px-7 py-4 text-base font-bold text-white shadow-xl shadow-blue-500/20 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-600 hover:shadow-blue-500/30 sm:text-lg"
+                >
+                  <CalendarDays size={20} />
+                  Book a Free 30-Min Strategy Call
+                  <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" size={20} />
+                </Link>
                 <Link
                   to="/contact"
-                  className="bg-blue-500 text-white px-8 py-4 rounded-lg font-medium hover:bg-blue-600 transition flex items-center gap-2 text-lg"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-7 py-4 text-base font-semibold text-white backdrop-blur-sm transition hover:border-white/35 hover:bg-white/10 sm:text-lg"
                 >
-                  Get Your Free SEO Audit <ArrowRight size={20} />
+                  Get Your Free SEO Audit
                 </Link>
+              </div>
+              <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-medium text-blue-200">
+                <span className="inline-flex items-center gap-1.5"><Clock3 size={16} /> 30 minutes</span>
+                <span className="inline-flex items-center gap-1.5"><CheckCircle2 size={16} /> No hard sell</span>
+                <span className="inline-flex items-center gap-1.5"><Sparkles size={16} /> Clear next steps</span>
               </div>
             </div>
             <div className="lg:col-span-5">
@@ -477,7 +510,7 @@ const HomePage: React.FC = () => {
           {/* CTA at bottom linking to contact page */}
           <div className="text-center mt-20">
             <p className="text-gray-400 mb-6 text-lg">
-              Ready to join our network of success stories?
+              Ready to become my next success story?
             </p>
             <Link
               to="/contact"
@@ -587,6 +620,64 @@ const HomePage: React.FC = () => {
 
       {/* Testimonials Section */}
       <TestimonialSlider />
+
+      {/* Strategy Call Conversion Section */}
+      <section className="relative overflow-hidden bg-slate-950 py-24 text-white">
+        <div className="absolute inset-0 booking-grid opacity-30"></div>
+        <div className="absolute -left-32 top-1/2 h-80 w-80 -translate-y-1/2 rounded-full bg-blue-500/20 blur-3xl calendar-glow"></div>
+        <div className="container relative mx-auto max-w-6xl px-6">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_0.8fr]">
+            <div>
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-blue-400/20 bg-blue-400/10 px-4 py-2 text-sm font-semibold text-blue-300">
+                <Sparkles size={16} />
+                YOUR NEXT BEST SEO MOVE
+              </div>
+              <h2 className="max-w-3xl text-4xl font-extrabold leading-tight md:text-5xl">
+                Turn 30 minutes into a clearer SEO growth plan.
+              </h2>
+              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300 md:text-xl">
+                I’ll look at where you are, where you want to go, and the SEO opportunities most likely to move the needle. You’ll leave with sharper priorities — not a generic sales pitch.
+              </p>
+              <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                {[
+                  'Find the biggest growth constraint',
+                  'Spot realistic quick wins',
+                  'Get 3 clear next steps',
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-sm font-semibold text-slate-200 backdrop-blur-sm">
+                    <CheckCircle2 className="mt-0.5 shrink-0 text-blue-400" size={19} />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="hover-lift rounded-[28px] border border-white/10 bg-gradient-to-br from-blue-600/25 to-white/[0.04] p-2 shadow-2xl shadow-blue-950/40">
+              <div className="rounded-[22px] border border-white/10 bg-slate-900/90 p-7 backdrop-blur-xl sm:p-8">
+                <div className="mb-6 inline-flex rounded-2xl bg-blue-500/15 p-4 text-blue-300">
+                  <CalendarDays size={30} />
+                </div>
+                <p className="text-sm font-bold uppercase tracking-[0.16em] text-blue-300">30-Minute Strategy Call</p>
+                <h3 className="mt-3 text-3xl font-extrabold">See what I’d prioritize first.</h3>
+                <p className="mt-4 leading-relaxed text-slate-300">
+                  Free call. Online meeting. Instant calendar invite. No preparation needed beyond your website URL and your goals.
+                </p>
+                <Link
+                  to="/book-call"
+                  className="cta-shine group mt-7 inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-xl bg-blue-500 px-6 py-4 text-center font-bold text-white shadow-xl shadow-blue-500/20 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-600"
+                >
+                  Choose My Time
+                  <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" size={20} />
+                </Link>
+                <div className="mt-4 flex items-center justify-center gap-2 text-xs font-medium text-slate-400">
+                  <Clock3 size={14} />
+                  Takes under a minute to book
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Process Section */}
       <section className="py-24 bg-gray-50 relative overflow-hidden">
@@ -760,6 +851,7 @@ const AppLayout = () => {
           <Route path="/about" element={<About />} />
           <Route path="/process" element={<Process />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/book-call" element={<BookCall />} />
         </Routes>
       </main>
 

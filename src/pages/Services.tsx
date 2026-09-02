@@ -145,7 +145,7 @@ const Services: React.FC = () => {
             <ArrowLeft className="mr-2" size={20} />
             Back to Home
           </Link>
-          <h1 className="text-5xl font-bold mb-6">Our SEO Services</h1>
+          <h1 className="text-5xl font-bold mb-6">My SEO Services</h1>
           <p className="text-xl text-blue-100 max-w-2xl">
             Comprehensive SEO solutions tailored to drive organic growth and maximize your ROI.
           </p>

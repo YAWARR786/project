@@ -88,7 +88,7 @@ const GEO = () => {
       // So we'll assume success if we get any response
       setSubmitStatus({
         success: true,
-        message: 'Thank you for your interest in GEO services! We will contact you soon.'
+        message: "Thank you for your interest in GEO services! I’ll contact you soon."
       });
       
       // Reset form

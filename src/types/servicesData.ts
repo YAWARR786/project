@@ -4,7 +4,7 @@ export const servicesData = {
       title: 'Technical SEO Audit',
       icon: 'Search',
       shortDescription: 'Comprehensive technical analysis to identify and fix critical SEO issues.',
-      description: 'Our Technical SEO Audit service provides a deep examination of your website\'s infrastructure to uncover technical barriers preventing optimal search engine visibility. We analyze over 200 technical factors that impact your rankings.',
+      description: 'My Technical SEO Audit service provides a deep examination of your website\'s infrastructure to uncover technical barriers preventing optimal search engine visibility. I analyze over 200 technical factors that impact your rankings.',
       heroImage: '/images/services/technical-audit.jpg',
       benefits: [
         'Identify and fix crawlability issues',
@@ -16,7 +16,7 @@ export const servicesData = {
       process: [
         {
           title: 'Initial Discovery',
-          description: 'We review your site structure and business goals',
+          description: 'I review your site structure and business goals',
           icon: '🔍'
         },
         {
@@ -43,16 +43,16 @@ export const servicesData = {
       faqs: [
         {
           question: 'How often should I conduct a technical SEO audit?',
-          answer: 'We recommend quarterly audits for most websites, or monthly for large e-commerce sites.'
+          answer: 'I recommend quarterly audits for most websites, or monthly for large e-commerce sites.'
         },
         {
           question: 'What tools do you use for the audit?',
-          answer: 'We use a combination of Screaming Frog, DeepCrawl, Google Search Console, and proprietary tools.'
+          answer: 'I use a combination of Screaming Frog, DeepCrawl, Google Search Console, and specialist tools.'
         }
       ],
       caseStudy: {
         title: 'E-commerce Site Increases Organic Traffic by 240%',
-        description: 'After fixing technical issues identified in our audit, this client saw dramatic improvements in just 3 months.',
+        description: 'After fixing technical issues identified in my audit, this client saw dramatic improvements in just 3 months.',
         metrics: [
           '240% increase in organic traffic',
           '155% more pages indexed',
@@ -65,7 +65,7 @@ export const servicesData = {
       title: 'Keyword Strategy',
       icon: 'Search',
       shortDescription: 'Comprehensive technical analysis to identify and fix critical SEO issues.',
-      description: 'Our Technical SEO Audit service provides a deep examination of your website\'s infrastructure to uncover technical barriers preventing optimal search engine visibility. We analyze over 200 technical factors that impact your rankings.',
+      description: 'My Technical SEO Audit service provides a deep examination of your website\'s infrastructure to uncover technical barriers preventing optimal search engine visibility. I analyze over 200 technical factors that impact your rankings.',
       heroImage: '/images/services/technical-audit.jpg',
       benefits: [
         'Identify and fix crawlability issues',
@@ -77,7 +77,7 @@ export const servicesData = {
       process: [
         {
           title: 'Initial Discovery',
-          description: 'We review your site structure and business goals',
+          description: 'I review your site structure and business goals',
           icon: '🔍'
         },
         {
@@ -104,16 +104,16 @@ export const servicesData = {
       faqs: [
         {
           question: 'How often should I conduct a technical SEO audit?',
-          answer: 'We recommend quarterly audits for most websites, or monthly for large e-commerce sites.'
+          answer: 'I recommend quarterly audits for most websites, or monthly for large e-commerce sites.'
         },
         {
           question: 'What tools do you use for the audit?',
-          answer: 'We use a combination of Screaming Frog, DeepCrawl, Google Search Console, and proprietary tools.'
+          answer: 'I use a combination of Screaming Frog, DeepCrawl, Google Search Console, and specialist tools.'
         }
       ],
       caseStudy: {
         title: 'E-commerce Site Increases Organic Traffic by 240%',
-        description: 'After fixing technical issues identified in our audit, this client saw dramatic improvements in just 3 months.',
+        description: 'After fixing technical issues identified in my audit, this client saw dramatic improvements in just 3 months.',
         metrics: [
           '240% increase in organic traffic',
           '155% more pages indexed',
@@ -126,7 +126,7 @@ export const servicesData = {
         title: 'Content Strategy',
         icon: 'Document',
         shortDescription: 'Holistic content planning that aligns with search intent and business objectives to drive sustainable growth.',
-        description: 'We develop comprehensive content strategies that map to your customer journey, identifying gaps and opportunities to create content that ranks and converts. Our approach combines SEO fundamentals with conversion psychology.',
+        description: 'I develop comprehensive content strategies that map to your customer journey, identifying gaps and opportunities to create content that ranks and converts. My approach combines SEO fundamentals with conversion psychology.',
         heroImage: '/images/services/content-strategy.jpg',
         benefits: [
           'Content gap analysis against competitors',
@@ -165,11 +165,11 @@ export const servicesData = {
         faqs: [
           {
             question: 'How do you ensure content remains effective over time?',
-            answer: 'We implement a quarterly content refresh cycle to update statistics, examples, and optimize based on performance.'
+            answer: 'I implement a quarterly content refresh cycle to update statistics, examples, and optimize based on performance.'
           },
           {
             question: 'Do you help with content distribution?',
-            answer: 'Yes, we develop amplification strategies including outreach, social, and email distribution plans.'
+            answer: 'Yes, I develop amplification strategies including outreach, social, and email distribution plans.'
           }
         ],
         caseStudy: {
@@ -188,7 +188,7 @@ export const servicesData = {
         title: 'SEO Blog Writing',
         icon: 'Pencil',
         shortDescription: 'High-quality, search-optimized blog content that engages readers and ranks for valuable keywords.',
-        description: 'Our professional SEO writers create blog content that satisfies both search engines and human readers. Each piece is meticulously researched, optimized for target keywords, and designed to earn links and shares.',
+        description: 'I create professional SEO blog content that satisfies both search engines and human readers. Each piece is meticulously researched, optimized for target keywords, and designed to earn links and shares.',
         heroImage: '/images/services/seo-blogging.jpg',
         benefits: [
           'Expert writers in your industry',
@@ -231,7 +231,7 @@ export const servicesData = {
           },
           {
             question: 'Do you include images and multimedia?',
-            answer: 'Yes, all posts include optimized images, and we can incorporate videos, infographics, or interactive elements.'
+            answer: 'Yes, all posts include optimized images, and I can incorporate videos, infographics, or interactive elements.'
           }
         ],
         caseStudy: {
@@ -249,7 +249,7 @@ export const servicesData = {
         title: 'International SEO',
         icon: 'Globe',
         shortDescription: 'Expand your global reach with localized SEO strategies tailored to different countries and languages.',
-        description: 'We help businesses scale internationally with geo-targeted SEO strategies, handling everything from hreflang implementations to local content adaptation and international link building.',
+        description: 'I help businesses scale internationally with geo-targeted SEO strategies, handling everything from hreflang implementation to local content adaptation and international link building.',
         heroImage: '/images/services/international-seo.jpg',
         benefits: [
           'Country/language targeting setup',
@@ -287,17 +287,17 @@ export const servicesData = {
         ],
         faqs: [
           {
-            question: 'Should we use subdomains or subdirectories for international sites?',
-            answer: 'We recommend subdirectories for most cases, unless you need strong country separation (then ccTLDs).'
+            question: 'Should I use subdomains or subdirectories for international sites?',
+            answer: 'I recommend subdirectories for most cases, unless you need strong country separation (then ccTLDs).'
           },
           {
             question: 'How do you handle multilingual content?',
-            answer: 'We implement proper hreflang tags and create truly localized content, not just translations.'
+            answer: 'I implement proper hreflang tags and create truly localized content, not just translations.'
           }
         ],
         caseStudy: {
           title: 'E-commerce Brand Expands to 12 New Markets',
-          description: 'Our international SEO framework helped them launch successfully in Europe and Asia within 8 months.',
+          description: 'My international SEO framework helped them launch successfully in Europe and Asia within 8 months.',
           metrics: [
             'Local #1 rankings in 7 countries',
             '300% increase in international revenue',
@@ -310,7 +310,7 @@ export const servicesData = {
         title: 'SEO Analytics',
         icon: 'Chart',
         shortDescription: 'Advanced measurement and insights to understand what\'s working and where to focus your SEO efforts.',
-        description: 'We go beyond basic traffic reporting to provide actionable insights from your SEO data. Our custom dashboards and analysis uncover the true ROI of your SEO efforts and identify high-potential opportunities.',
+        description: 'I go beyond basic traffic reporting to provide actionable insights from your SEO data. My custom dashboards and analysis uncover the true ROI of your SEO efforts and identify high-potential opportunities.',
         heroImage: '/images/services/seo-analytics.jpg',
         benefits: [
           'Custom SEO dashboards',
@@ -349,16 +349,16 @@ export const servicesData = {
         faqs: [
           {
             question: 'What tools do you integrate with?',
-            answer: 'We work with Google Analytics, Search Console, Looker Studio, SEMrush, Ahrefs, and custom data sources.'
+            answer: 'I work with Google Analytics, Search Console, Looker Studio, SEMrush, Ahrefs, and custom data sources.'
           },
           {
-            question: 'How often do we receive reports?',
+            question: 'How often will I receive reports?',
             answer: 'Weekly automated reports with monthly deep-dive analysis sessions.'
           }
         ],
         caseStudy: {
           title: 'Enterprise Reduces Wasted SEO Spend by 65%',
-          description: 'Our analytics identified underperforming initiatives, allowing reallocation to high-ROI activities.',
+          description: 'My analytics identified underperforming initiatives, allowing reallocation to high-ROI activities.',
           metrics: [
             '65% reduction in inefficient spend',
             '40% higher conversion rate',
@@ -371,7 +371,7 @@ export const servicesData = {
         title: 'Local SEO Optimization',
         icon: 'MapPin',
         shortDescription: 'Dominate local search results and Google Maps to drive more foot traffic and local customers.',
-        description: 'Our Local SEO service optimizes your online presence to attract customers in your geographic area. We manage everything from Google Business Profile optimization to local citations and review management.',
+        description: 'My Local SEO service optimizes your online presence to attract customers in your geographic area. I manage everything from Google Business Profile optimization to local citations and review management.',
         heroImage: '/images/services/local-seo.jpg',
         benefits: [
           'Google Business Profile optimization',
@@ -410,11 +410,11 @@ export const servicesData = {
         faqs: [
           {
             question: 'How many locations can you handle?',
-            answer: 'We specialize in multi-location SEO with systems to scale to hundreds or thousands of locations.'
+            answer: 'I specialize in multi-location SEO with systems designed to scale across hundreds or thousands of locations.'
           },
           {
             question: 'Do you help with service-area businesses?',
-            answer: 'Yes, we have specific strategies for businesses that serve areas rather than having a physical location.'
+            answer: 'Yes, I use specific strategies for businesses that serve areas rather than having a physical location.'
           }
         ],
         caseStudy: {
@@ -432,7 +432,7 @@ export const servicesData = {
         title: 'Custom AI Agent Creation',
         icon: 'Clipboard',
         shortDescription: 'Detailed, data-driven content instructions that ensure writers produce optimized, high-performing content.',
-        description: 'Our SEO Content Briefs provide writers with everything they need to create content that ranks, including target keywords, semantic terms, content structure, and competitor analysis. Perfect for in-house teams or freelance writers.',
+        description: "My SEO Content Briefs give writers everything they need to create content that ranks, including target keywords, semantic terms, content structure, and competitor analysis. They’re ideal for in-house teams or freelance writers.",
         heroImage: '/images/services/content-briefs.jpg',
         benefits: [
           'Comprehensive keyword targeting',
@@ -471,11 +471,11 @@ export const servicesData = {
         faqs: [
           {
             question: 'How detailed are your content briefs?',
-            answer: 'Our briefs typically run 3-5 pages, including keyword targets, content structure, word count guidance, and examples.'
+            answer: 'My briefs typically run 3-5 pages, including keyword targets, content structure, word count guidance, and examples.'
           },
           {
             question: 'Do you update briefs based on performance?',
-            answer: 'Yes, we refresh briefs quarterly based on content performance and algorithm updates.'
+            answer: 'Yes, I refresh briefs quarterly based on content performance and algorithm updates.'
           }
         ],
         caseStudy: {

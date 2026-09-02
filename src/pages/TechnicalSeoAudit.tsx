@@ -90,7 +90,7 @@ const TechnicalSeoAudit = () => {
                // So we'll assume success if we get any response
                setSubmitStatus({
                  success: true,
-                 message: 'Thank you for your interest in GEO services! We will contact you soon.'
+                 message: "Thank you for your interest! I’ll contact you soon."
                });
                
                // Reset form
@@ -134,7 +134,7 @@ const TechnicalSeoAudit = () => {
             Your Traffic Problem Might Be a Technical One
           </h1>
           <p className="text-xl text-blue-100 mb-12">
-            Before we talk keywords, let's fix what's broken under the hood. A full technical SEO audit reveals what's silently killing your rankings — and gives you a clear roadmap to fix it.
+            Before I talk keywords, let's fix what's broken under the hood. A full technical SEO audit reveals what's silently killing your rankings — and gives you a clear roadmap to fix it.
           </p>
           <button className="bg-blue-500 text-white px-8 py-4 rounded-lg font-medium hover:bg-blue-600 transition flex items-center gap-2 mx-auto text-lg">
             Request My SEO Audit <ArrowRight size={20} />

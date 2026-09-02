@@ -110,13 +110,13 @@ const services = [
             <div className="container mx-auto px-6 max-w-7xl">
               <div className="max-w-4xl mx-auto text-center mb-20">
                 <span className="inline-block bg-blue-100 text-blue-600 font-medium px-4 py-2 rounded-full mb-6 text-sm">
-                  OUR EXPERTISE
+                  MY EXPERTISE
                 </span>
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                   Comprehensive SEO Solutions for <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400">Sustainable Growth</span>
                 </h2>
                 <p className="text-xl text-gray-600 md:px-10">
-                  We architect complete SEO ecosystems that combine technical precision with strategic content to deliver compounding organic growth.
+                  I architect complete SEO ecosystems that combine technical precision with strategic content to deliver compounding organic growth.
                 </p>
               </div>
       

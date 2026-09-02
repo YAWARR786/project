@@ -99,7 +99,7 @@ const TestimonialSlider: React.FC = () => {
         <div className="text-center mb-16">
           <span className="text-blue-400 font-semibold mb-6 block">TESTIMONIALS</span>
           <h2 className="text-4xl font-bold text-white mb-6">
-            What Our Clients Say
+            What My Clients Say
           </h2>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
             Real feedback from real clients who have transformed their digital presence.

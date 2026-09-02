@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { ArrowRight, CalendarDays, Clock3 } from 'lucide-react';
 import ScrollToTop from './ScrollToTop';
 
 const Footer = () => {
@@ -6,6 +7,32 @@ const Footer = () => {
     <div>
       <footer className="bg-gray-900 text-white py-16">
         <div className="container mx-auto px-6 max-w-6xl">
+          <div className="mb-14 rounded-[28px] border border-blue-400/20 bg-gradient-to-br from-blue-600/20 via-blue-500/10 to-transparent p-7 sm:p-9">
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-2xl">
+                <div className="mb-2 flex items-center gap-2 text-sm font-bold uppercase tracking-[0.14em] text-blue-300">
+                  <CalendarDays size={16} /> Talk growth with me
+                </div>
+                <h2 className="text-3xl font-extrabold leading-tight text-white sm:text-4xl">
+                  Want to know what I’d fix first on your SEO?
+                </h2>
+                <p className="mt-3 text-gray-300">Book a free 30-minute strategy call and leave with clearer priorities.</p>
+              </div>
+              <div className="shrink-0">
+                <Link
+                  to="/book-call"
+                  className="cta-shine group inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-xl bg-blue-500 px-6 py-4 font-bold text-white shadow-lg shadow-blue-500/20 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-600 sm:w-auto"
+                >
+                  Book My Free Call
+                  <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" size={19} />
+                </Link>
+                <div className="mt-3 flex items-center justify-center gap-1.5 text-xs text-gray-400">
+                  <Clock3 size={13} /> 30 minutes · instant calendar invite
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {/* Services Column - Expanded */}
             <div>
@@ -116,7 +143,7 @@ const Footer = () => {
                 <svg className="w-5 h-5 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                 </svg>
-                Company
+                Explore
               </h3>
               <ul className="space-y-4">
                 <li>
@@ -125,7 +152,7 @@ const Footer = () => {
                     className="text-gray-400 hover:text-blue-400 transition flex items-center group"
                   >
                     <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition"></span>
-                    About Us
+                    About Me
                   </Link>
                 </li>
                 <li>
@@ -134,7 +161,7 @@ const Footer = () => {
                     className="text-gray-400 hover:text-blue-400 transition flex items-center group"
                   >
                     <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition"></span>
-                    Our Process
+                    My Process
                   </Link>
                 </li>
                 <li>
@@ -143,7 +170,7 @@ const Footer = () => {
                     className="text-gray-400 hover:text-blue-400 transition flex items-center group"
                   >
                     <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition"></span>
-                    Contact Us
+                    Contact Me
                   </Link>
                 </li>
               </ul>

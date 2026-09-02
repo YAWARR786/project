@@ -152,7 +152,7 @@ const BlogPage = () => {
               SEO Insights
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Our Latest Blog Posts
+              My Latest Blog Posts
             </h1>
             <p className="text-xl text-gray-600">
               Discover actionable SEO strategies, industry trends, and expert tips to grow your online presence.
@@ -215,7 +215,7 @@ const BlogPage = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <h3 className="text-xl font-medium text-gray-900 mb-2">No blog posts yet</h3>
-              <p className="text-gray-500 mb-6">We're working on creating valuable content for you. Please check back soon!</p>
+              <p className="text-gray-500 mb-6">I'm working on creating valuable content for you. Please check back soon!</p>
               <Link 
                 to="/" 
                 className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition"

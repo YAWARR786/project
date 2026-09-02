@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Mail, Phone, MapPin, Send, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
+import { ArrowLeft, Mail, Phone, Send, Loader2, CheckCircle, AlertCircle, CalendarDays, ArrowRight, Clock3, Sparkles } from 'lucide-react';
 import { Linkedin, Twitter, Instagram} from 'lucide-react';
 import { FaMedium } from 'react-icons/fa';
 
@@ -80,7 +80,7 @@ const Contact: React.FC = () => {
 
       setSubmitStatus({
         success: true,
-        message: 'Your message has been sent successfully! We will get back to you soon.'
+        message: "Your message has been sent successfully! I’ll get back to you soon."
       });
       
       // Reset form
@@ -128,12 +128,43 @@ const Contact: React.FC = () => {
           </Link>
           <h1 className="text-5xl font-bold mb-6">Get in Touch</h1>
           <p className="text-xl text-blue-100 max-w-2xl">
-            Ready to transform your SEO strategy? Let's discuss how we can help you achieve your goals.
+            Ready to transform your SEO strategy? Let's discuss how I can help you achieve your goals.
           </p>
         </div>
       </div>
 
       <div className="container mx-auto px-6 max-w-6xl py-24">
+        <div className="mb-14 overflow-hidden rounded-[28px] bg-slate-950 p-1 shadow-xl shadow-blue-900/10">
+          <div className="relative overflow-hidden rounded-[24px] border border-white/10 px-7 py-8 text-white sm:px-9 sm:py-9">
+            <div className="absolute inset-0 booking-grid opacity-25"></div>
+            <div className="absolute -right-16 -top-24 h-64 w-64 rounded-full bg-blue-500/20 blur-3xl calendar-glow"></div>
+            <div className="relative flex flex-col gap-7 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-2xl">
+                <div className="mb-3 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.14em] text-blue-300">
+                  <Sparkles size={16} /> Prefer a quick conversation?
+                </div>
+                <h2 className="text-3xl font-extrabold sm:text-4xl">Book a free 30-minute SEO strategy call.</h2>
+                <p className="mt-3 text-base leading-relaxed text-slate-300 sm:text-lg">
+                  Pick a time that works for you and get an instant calendar invite. I’ll help you identify the SEO priorities worth focusing on first.
+                </p>
+              </div>
+              <div className="shrink-0">
+                <Link
+                  to="/book-call"
+                  className="cta-shine group inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-xl bg-blue-500 px-6 py-4 font-bold text-white shadow-xl shadow-blue-500/20 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-600 sm:w-auto"
+                >
+                  <CalendarDays size={20} />
+                  Choose a Time
+                  <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" size={19} />
+                </Link>
+                <div className="mt-3 flex items-center justify-center gap-1.5 text-xs text-slate-400">
+                  <Clock3 size={13} /> 30 minutes · no hard sell
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div>

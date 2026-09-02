@@ -24,7 +24,7 @@ const TermsOfService = () => {
       </Box>
 
       <Typography variant="body1" paragraph>
-        Welcome to Rank N Convert! These Terms of Service ("Terms") govern your use of our website located at https://ranknconvert.com/ (the "Service") operated by Rank N Convert ("us", "we", or "our").
+        Welcome to Rank N Convert! These Terms of Service ("Terms") govern your use of my website located at https://ranknconvert.com/ (the "Service"), operated under Rank N Convert. In these Terms, "I", "me", and "my" refer to the operator of Rank N Convert.
       </Typography>
 
       <Accordion defaultExpanded>
@@ -44,7 +44,7 @@ const TermsOfService = () => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography variant="body1" paragraph>
-            When you create an account with us, you must provide accurate and complete information. You are solely responsible for the activity that occurs on your account and for keeping your password secure.
+            When you create an account with me, you must provide accurate and complete information. You are solely responsible for the activity that occurs on your account and for keeping your password secure.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -55,7 +55,7 @@ const TermsOfService = () => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography variant="body1" paragraph>
-            The Service and its original content, features, and functionality are and will remain the exclusive property of Rank N Convert and its licensors. Our trademarks and trade dress may not be used without our prior written consent.
+            The Service and its original content, features, and functionality are and will remain the exclusive property of Rank N Convert and its licensors. My trademarks and trade dress may not be used without my prior written consent.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -70,7 +70,7 @@ const TermsOfService = () => {
           </Typography>
           <ul>
             <li><Typography variant="body1">Use the Service for any illegal purpose</Typography></li>
-            <li><Typography variant="body1">Attempt to gain unauthorized access to our systems</Typography></li>
+            <li><Typography variant="body1">Attempt to gain unauthorized access to my systems</Typography></li>
             <li><Typography variant="body1">Interfere with or disrupt the Service</Typography></li>
             <li><Typography variant="body1">Upload or transmit viruses or any harmful code</Typography></li>
           </ul>
@@ -83,7 +83,7 @@ const TermsOfService = () => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography variant="body1" paragraph>
-            We may terminate or suspend your account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.
+            I may terminate or suspend your account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -116,15 +116,15 @@ const TermsOfService = () => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography variant="body1" paragraph>
-            We reserve the right, at our sole discretion, to modify or replace these Terms at any time. We will provide notice of any changes by posting the new Terms on this page.
+            I reserve the right, at my sole discretion, to modify or replace these Terms at any time. I will provide notice of changes by posting the updated Terms on this page.
           </Typography>
         </AccordionDetails>
       </Accordion>
 
       <Box mt={4}>
-        <Typography variant="h6" gutterBottom>Contact Us</Typography>
+        <Typography variant="h6" gutterBottom>Contact Me</Typography>
         <Typography variant="body1">
-          If you have any questions about these Terms, please contact us:
+          If you have any questions about these Terms, please contact me:
         </Typography>
         <Typography variant="body1">
           By email: <Link href="mailto:yawarkhanmbd789@gmail.com">yawarkhanmbd789@gmail.com</Link>

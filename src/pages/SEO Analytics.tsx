@@ -89,7 +89,7 @@ const SeoAnalytics = () => {
            // So we'll assume success if we get any response
            setSubmitStatus({
              success: true,
-             message: 'Thank you for your interest in GEO services! We will contact you soon.'
+             message: "Thank you for your interest! I’ll contact you soon."
            });
            
            // Reset form

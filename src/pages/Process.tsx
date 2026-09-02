@@ -99,7 +99,7 @@ const Process: React.FC = () => {
             <ArrowLeft className="mr-2" size={20} />
             Back to Home
           </Link>
-          <h1 className="text-5xl font-bold mb-6">Our Process</h1>
+          <h1 className="text-5xl font-bold mb-6">My Process</h1>
           <p className="text-xl text-blue-100 max-w-2xl">
             A systematic approach to SEO that delivers consistent results through proven methodologies.
           </p>
