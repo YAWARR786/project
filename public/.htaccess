@@ -1,0 +1,54 @@
+RewriteEngine On
+
+# Permanent redirects for older public URLs.
+RewriteRule ^services/Custom-AI-Agent-Creation/?$ /services/custom-ai-agent-creation [R=301,L,NE]
+RewriteRule ^services/GEO/?$ /services/geo [R=301,L,NE]
+
+# Keep internal stored service-page files out of public URLs.
+RewriteCond %{THE_REQUEST} \s/+service-pages/(.+?)\.html(?:[?\s]) [NC]
+RewriteRule ^service-pages/(.+)\.html$ /services/$1 [R=301,L,NE]
+RewriteCond %{THE_REQUEST} \s/+service-pages/(.+?)/?(?:[?\s]) [NC]
+RewriteRule ^service-pages/(.+?)/?$ /services/$1 [R=301,L,NE]
+RewriteCond %{THE_REQUEST} \s/+service-pages/?(?:[?\s]) [NC]
+RewriteRule ^service-pages/?$ /services [R=301,L,NE]
+
+# Consolidate direct .html requests to clean canonical URLs.
+RewriteCond %{THE_REQUEST} \s/+index\.html(?:[?\s]) [NC]
+RewriteRule ^index\.html$ / [R=301,L,NE]
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html(?:[?\s]) [NC]
+RewriteRule ^(.+)\.html$ /$1 [R=301,L,NE]
+
+# Remove trailing slashes from clean non-directory URLs.
+RewriteCond %{REQUEST_URI} !^/$
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{THE_REQUEST} \s/+(.+?)/+[?\s] [NC]
+RewriteRule ^(.+)/$ /$1 [R=301,L,NE]
+
+# Keep real files and folders working normally.
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# /services is a public page. Keep it separate from stored service-page files.
+RewriteRule ^services$ services.html [L]
+
+# Serve prerendered service pages while keeping public URLs under /services/.
+RewriteCond %{DOCUMENT_ROOT}/service-pages/$1.html -f
+RewriteRule ^services/(.+?)/?$ service-pages/$1.html [L]
+
+# Serve other prerendered clean URLs such as /about from about.html.
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+# Use the project's real 404 page for anything else.
+ErrorDocument 404 /404.html
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/png "access plus 7 days"
+  ExpiresByType image/jpeg "access plus 7 days"
+  ExpiresByType image/webp "access plus 7 days"
+  ExpiresByType image/svg+xml "access plus 7 days"
+</IfModule>
