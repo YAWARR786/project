@@ -529,10 +529,9 @@ const HomePage: React.FC = () => {
             <button
               onClick={() => {
                 const link = document.createElement("a");
-                link.href =
-                  "https://docs.google.com/document/d/1gQNswrPK4h7YgS0Fc-mJobFiqN-Wq_40e5Jd4Yip-H0/export?format=pdf";
-                link.download = "SEO-Framework.pdf";
-                link.click();
+link.href = "/seo-framework.pdf";
+link.download = "seo-framework.pdf";
+link.click();
               }}
               className="flex items-center gap-2 bg-gray-900 text-white px-8 py-4 rounded-lg font-medium hover:bg-gray-800 transition text-lg"
             >
