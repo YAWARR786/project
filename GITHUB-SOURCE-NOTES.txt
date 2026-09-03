@@ -1,0 +1,35 @@
+Rank N Convert — GitHub source updated
+
+This package is the editable SOURCE version for GitHub.
+It is not the Hostinger upload ZIP.
+
+Use this for GitHub:
+- ranknconvert-GITHUB-SOURCE-UPDATED.zip
+
+Use this for Hostinger:
+- ranknconvert-HOSTINGER-READY-SEO-BACKEND-CONNECTED.zip
+
+Changes applied to the source:
+1. Added Hostinger .htaccess into public/.htaccess so future builds keep the /services routing fix.
+2. Updated the prerender script so service child pages build into /service-pages, avoiding the Hostinger /services folder conflict.
+3. Removed /blog and /services/seo-content-briefs from the generated sitemap until they are ready.
+4. Set /blog and /services/seo-content-briefs to noindex, follow in source SEO settings.
+5. Updated old service card URLs to lowercase canonical URLs.
+6. Replaced the old Google Apps Script URL with your new backend URL:
+   https://script.google.com/macros/s/AKfycbzaUXeNCJ4toSTUJ9mwRrebvRpe5v3ET8nuddBOFrqGWI7hftwbnfCBsOMEw7XI0UXM/exec
+7. Changed form submissions to URL-encoded data so your Google Apps Script e.parameter can save the rows correctly.
+
+Not changed:
+- Design
+- Layout
+- CSS classes
+- Images
+- Fonts
+- Calendly
+- Page visual structure
+
+Important:
+The SEO Content Briefs page source still contains the wrong AI Agent style/content.
+It has been kept noindex and out of sitemap until you add the correct page content.
+
+Date prepared: 2026-09-03T12:56:38

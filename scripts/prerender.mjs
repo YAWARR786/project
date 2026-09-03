@@ -41,6 +41,14 @@ const templateWithoutFallbackSeo = stripFallbackSeo(baseTemplate);
 
 const toOutputFile = (route) => {
   if (route === '/') return path.join(distDir, 'index.html');
+
+  // Hostinger treats /services as a real folder when service pages are stored
+  // under dist/services/. Store child service pages separately and map them
+  // back to public /services/... URLs in .htaccess.
+  if (route.startsWith('/services/')) {
+    return path.join(distDir, `service-pages/${route.replace('/services/', '')}.html`);
+  }
+
   return path.join(distDir, `${route.replace(/^\//, '')}.html`);
 };
 

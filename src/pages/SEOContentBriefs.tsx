@@ -71,7 +71,7 @@ const SEOContentBriefs = () => {
                setSubmitStatus(null);
            
              try {
-               const scriptUrl = 'https://script.google.com/macros/s/AKfycbwlzBiQ-6Ss1qccQCLZtVobaILd-PHKAJ2XtUE0_R0iHuzbVcFYHPtfiRPCMpx-Ig0-/exec';
+               const scriptUrl = 'https://script.google.com/macros/s/AKfycbzaUXeNCJ4toSTUJ9mwRrebvRpe5v3ET8nuddBOFrqGWI7hftwbnfCBsOMEw7XI0UXM/exec';
                
                // Important: Add a random parameter to prevent caching
                const cacheBusterUrl = `${scriptUrl}?t=${Date.now()}`;
@@ -80,12 +80,15 @@ const SEOContentBriefs = () => {
                  method: 'POST',
                  mode: 'no-cors',
                  headers: {
-                   'Content-Type': 'application/json',
+                   'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
                  },
-                 body: JSON.stringify({
-                   ...formData,
-                   formType: 'service-geo'
-                 }),
+                 body: new URLSearchParams({
+            ...(formData as Record<string, string>),
+            message: (formData as Record<string, string>).queries || (formData as Record<string, string>).message || '',
+            service: window.location.pathname,
+            page: window.location.pathname,
+            source: 'Rank N Convert Website',
+          }).toString(),
                });
            
                // With no-cors mode, we can't read the response directly

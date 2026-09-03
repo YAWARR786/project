@@ -77,6 +77,7 @@ export const PAGE_SEO: Record<string, PageSEO> = {
     title: 'SEO Content Brief Services | Rank N Convert',
     description:
       'Give writers clear search-focused direction with SEO content briefs built around keywords, search intent, topics, structure and competitor insights.',
+    noindex: true,
   },
   '/services/geo': {
     title: 'Generative Engine Optimization (GEO) Services | Rank N Convert',
@@ -102,6 +103,7 @@ export const PAGE_SEO: Record<string, PageSEO> = {
     title: 'SEO Blog: Technical SEO, Content & Growth | Rank N Convert',
     description:
       'Read practical SEO insights covering technical SEO, keyword research, content strategy, organic traffic, search visibility and sustainable growth.',
+    noindex: true,
   },
   '/book-call': {
     title: 'Book an SEO Strategy Call | Rank N Convert',

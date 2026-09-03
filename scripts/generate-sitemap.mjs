@@ -18,12 +18,10 @@ const staticUrls = [
   ['/services/local-seo', '0.8'],
   ['/services/custom-ai-agent-creation', '0.7'],
   ['/services/international-seo', '0.8'],
-  ['/services/seo-content-briefs', '0.8'],
   ['/services/geo', '0.8'],
   ['/about', '0.6'],
   ['/process', '0.6'],
   ['/contact', '0.6'],
-  ['/blog', '0.8'],
 ];
 
 const externallyProvidedEnv = new Set(Object.keys(process.env));

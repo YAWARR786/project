@@ -109,7 +109,7 @@ const Services: React.FC = () => {
     //   ]
     // },
     {
-      id: 'Custom-AI-Agent-Creation',
+      id: 'custom-ai-agent-creation',
       icon: <FileEdit className="w-12 h-12 text-blue-500" />,
       title: "Custom AI Agent Creation",
       description: "Detailed content instructions for writers to ensure SEO-optimized output.",
@@ -122,7 +122,7 @@ const Services: React.FC = () => {
       ]
     },
     {
-      id: 'GEO',
+      id: 'geo',
       icon: <FileEdit className="w-12 h-12 text-blue-500" />,
       title: "Generative Engine Optimzation (GEO)",
       description: "Generative Engine Optimization (GEO) is about positioning your brand inside AI-generated answers",

@@ -30,7 +30,7 @@ const SEOManager = () => {
   const canonicalPath = isKnownPage ? normalizedPath : pathname;
   const canonical = `${SITE_URL}${canonicalPath === '/' ? '/' : canonicalPath}`;
   const robots = pageSEO.noindex
-    ? 'noindex, nofollow'
+    ? 'noindex, follow'
     : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
 
   const structuredData = isKnownPage && !pageSEO.noindex
